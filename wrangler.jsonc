@@ -1,0 +1,32 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "familienplan",
+  "main": "apps/worker/src/index.ts",
+  "compatibility_date": "2026-10-04",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": "./apps/web/dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "familienplan",
+      // Platzhalter für lokale Entwicklung. Echte ID nach `wrangler d1 create familienplan` bzw. über den Cloudflare-Connector eintragen.
+      "database_id": "00000000-0000-0000-0000-000000000000",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "vars": {
+    "ENVIRONMENT": "production",
+    "AUTH_MODE": "access",
+    // Zero-Trust-Team-Domain (z. B. "<team>.cloudflareaccess.com") und Access-Application-AUD-Tag nach dem Access-Setup eintragen:
+    "ACCESS_TEAM_DOMAIN": "",
+    "ACCESS_POLICY_AUD": "",
+    // E-Mail des Haushalts-Owners (Bootstrap beim ersten Login)
+    "OWNER_EMAIL": ""
+  },
+  "observability": { "enabled": true }
+}

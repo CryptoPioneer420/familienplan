@@ -1,0 +1,3497 @@
+{
+  "schemaVersion": "1.0.0",
+  "meta": {
+    "title": "Familien-Ernährungskonzept Zypern, Seed v2 (App-Parameter Teil 2)",
+    "locale": "de-CY",
+    "region": "CY",
+    "createdAt": "2026-10-04",
+    "nutritionDataStatus": "approximate_unverified",
+    "notes": [
+      "Nährwerte sind Richtwerte aus Allgemeinwissen, vor Produktivnutzung gegen BLS/USDA prüfen.",
+      "Zutaten mit userListedLocal=false sind Ergänzungen außerhalb deiner Lokalliste (Eier, Hülsenfrüchte, Bulgur, Avocado, Joghurt, Nüsse).",
+      "v2: Vater 95 kg, Calisthenics 06:30, Spätsnack fest 20:45, Zink 15 mg, Magnesium 150 mg je Slot, Samstag-Taverne, Sonntag-Brunch.",
+      "Zutaten Oktopus, Lamm-Kotelett, Sauerteigbrot: Richtwerte aus Allgemeinwissen, unverifiziert."
+    ]
+  },
+  "household": {
+    "members": [
+      {
+        "id": "father",
+        "role": "father",
+        "displayName": "Vater",
+        "ageYears": null,
+        "bodyWeightKg": 95,
+        "goal": "muscle_gain",
+        "supplementsAllowed": true,
+        "isPlaceholder": false,
+        "notes": [
+          "Ziel Muskelaufbau, Protein-Ziel 1,8 g/kg = mind. 171 g bei 95 kg."
+        ]
+      },
+      {
+        "id": "mother",
+        "role": "mother",
+        "displayName": "Mutter",
+        "ageYears": null,
+        "bodyWeightKg": null,
+        "goal": "unspecified",
+        "supplementsAllowed": true,
+        "isPlaceholder": false,
+        "notes": [
+          "Standard-Portionsfaktor 0,8 (Nutzerangabe Teil 2)."
+        ]
+      },
+      {
+        "id": "child",
+        "role": "child",
+        "displayName": "Tochter",
+        "ageYears": 4,
+        "bodyWeightKg": null,
+        "goal": "child_growth",
+        "supplementsAllowed": false,
+        "isPlaceholder": false,
+        "notes": [
+          "Keine Supplemente. Kind-Faktoren Protein 0,3, Kohlenhydrate 0,35, Gemüse 0,4."
+        ]
+      }
+    ]
+  },
+  "dayTypes": {
+    "training_day": {
+      "label": "Trainingstag (Mo/Mi/Fr)",
+      "proteinGPerKg": {
+        "min": 1.8,
+        "max": 2.2
+      },
+      "carbsGPerKg": {
+        "min": 4.0,
+        "max": 5.0
+      },
+      "fatGPerKg": {
+        "min": 0.8,
+        "max": 1.2
+      },
+      "energyBalancePercent": {
+        "min": 5,
+        "max": 10
+      },
+      "fiberGMin": 30,
+      "claims": [
+        {
+          "text": "Protein 1.6-2.2 g/kg/Tag deckt den belegten Nutzen für Hypertrophie ab (Morton et al. 2018, aus Gedächtnis).",
+          "confidence": "wahrscheinlich"
+        },
+        {
+          "text": "Komplexe Kohlenhydrate am Abend füllen Glykogen auf; Erstmahlzeit nach dem Training liefert bereits eine Portion.",
+          "confidence": "wahrscheinlich"
+        }
+      ]
+    },
+    "rest_day": {
+      "label": "Ruhetag (Di/Do, Sa/So als Annahme)",
+      "proteinGPerKg": {
+        "min": 1.8,
+        "max": 2.2
+      },
+      "carbsGPerKg": {
+        "min": 0.5,
+        "max": 1.0
+      },
+      "fatGPerKg": {
+        "min": 1.5,
+        "max": 2.0
+      },
+      "energyBalancePercent": {
+        "min": 0,
+        "max": 5
+      },
+      "fiberGMin": 30,
+      "claims": [
+        {
+          "text": "Low-Carb mit Carb-Zyklus ist keine stabile Ketose; nutzt aber Blutzucker-Stabilität ohne Hypertrophie-Nachteil bei gleichem Protein.",
+          "confidence": "wahrscheinlich"
+        },
+        {
+          "text": "Zwei Mahlzeiten mit hohem Fettanteil erleichtern den Kalorienüberschuss.",
+          "confidence": "vermutung"
+        }
+      ]
+    }
+  },
+  "ingredients": [
+    {
+      "id": "anari",
+      "nameDe": "Anari, frisch, ungesalzen",
+      "category": "dairy",
+      "localCY": true,
+      "userListedLocal": true,
+      "per100g": {
+        "kcal": 150,
+        "proteinG": 10,
+        "fatG": 11,
+        "carbsG": 3,
+        "fiberG": 0
+      },
+      "glycemicClass": "low",
+      "allergens": [
+        "milk"
+      ],
+      "safetyNotes": [
+        "Molkenkäse: schnell verdauliches Eiweiß (Whey), kein Casein.",
+        "Frisch nur wenige Tage haltbar; für das Kind pasteurisierte Ware verwenden."
+      ]
+    },
+    {
+      "id": "lavraki",
+      "nameDe": "Lavraki (Wolfsbarsch), Filet roh",
+      "category": "protein_fish",
+      "localCY": true,
+      "userListedLocal": true,
+      "per100g": {
+        "kcal": 120,
+        "proteinG": 19,
+        "fatG": 4.5,
+        "carbsG": 0,
+        "fiberG": 0
+      },
+      "glycemicClass": "not_applicable",
+      "allergens": [
+        "fish"
+      ],
+      "safetyNotes": []
+    },
+    {
+      "id": "tsipoura",
+      "nameDe": "Tsipoura (Dorade), Filet roh",
+      "category": "protein_fish",
+      "localCY": true,
+      "userListedLocal": true,
+      "per100g": {
+        "kcal": 115,
+        "proteinG": 19.5,
+        "fatG": 3.8,
+        "carbsG": 0,
+        "fiberG": 0
+      },
+      "glycemicClass": "not_applicable",
+      "allergens": [
+        "fish"
+      ],
+      "safetyNotes": []
+    },
+    {
+      "id": "lamm-keule",
+      "nameDe": "Lamm, Keule, mager, roh",
+      "category": "protein_meat",
+      "localCY": true,
+      "userListedLocal": true,
+      "per100g": {
+        "kcal": 150,
+        "proteinG": 20,
+        "fatG": 7.5,
+        "carbsG": 0,
+        "fiberG": 0
+      },
+      "glycemicClass": "not_applicable",
+      "allergens": [],
+      "safetyNotes": []
+    },
+    {
+      "id": "ziege",
+      "nameDe": "Ziegenfleisch, roh",
+      "category": "protein_meat",
+      "localCY": true,
+      "userListedLocal": true,
+      "per100g": {
+        "kcal": 110,
+        "proteinG": 20.5,
+        "fatG": 2.5,
+        "carbsG": 0,
+        "fiberG": 0
+      },
+      "glycemicClass": "not_applicable",
+      "allergens": [],
+      "safetyNotes": []
+    },
+    {
+      "id": "kartoffel",
+      "nameDe": "Kartoffel, zypriotisch, roh",
+      "category": "tuber",
+      "localCY": true,
+      "userListedLocal": true,
+      "per100g": {
+        "kcal": 77,
+        "proteinG": 2,
+        "fatG": 0.1,
+        "carbsG": 17,
+        "fiberG": 2.2
+      },
+      "glycemicClass": "high",
+      "allergens": [],
+      "safetyNotes": [
+        "Abgekühlt und wieder erwärmt mehr resistente Stärke, niedrigerer glykämischer Effekt."
+      ]
+    },
+    {
+      "id": "kolokasi",
+      "nameDe": "Kolokasi (Taro), roh",
+      "category": "tuber",
+      "localCY": true,
+      "userListedLocal": true,
+      "per100g": {
+        "kcal": 112,
+        "proteinG": 1.5,
+        "fatG": 0.2,
+        "carbsG": 26.5,
+        "fiberG": 4.1
+      },
+      "glycemicClass": "medium",
+      "allergens": [],
+      "safetyNotes": [
+        "NIE roh: Kalziumoxalat-Kristalle reizen Mund/Rachen. Schälen mit Handschuhen, durchgaren, Kochwasser verwerfen."
+      ]
+    },
+    {
+      "id": "evoo",
+      "nameDe": "Olivenöl, nativ extra",
+      "category": "fat_oil",
+      "localCY": true,
+      "userListedLocal": true,
+      "per100g": {
+        "kcal": 884,
+        "proteinG": 0,
+        "fatG": 100,
+        "carbsG": 0,
+        "fiberG": 0
+      },
+      "glycemicClass": "not_applicable",
+      "allergens": [],
+      "safetyNotes": []
+    },
+    {
+      "id": "tahini",
+      "nameDe": "Tahini, roh",
+      "category": "nut_seed",
+      "localCY": true,
+      "userListedLocal": true,
+      "per100g": {
+        "kcal": 595,
+        "proteinG": 17,
+        "fatG": 53.8,
+        "carbsG": 21.2,
+        "fiberG": 9.3
+      },
+      "glycemicClass": "low",
+      "allergens": [
+        "sesame"
+      ],
+      "safetyNotes": []
+    },
+    {
+      "id": "walnuss",
+      "nameDe": "Walnuss",
+      "category": "nut_seed",
+      "localCY": true,
+      "userListedLocal": false,
+      "per100g": {
+        "kcal": 654,
+        "proteinG": 15.2,
+        "fatG": 65.2,
+        "carbsG": 13.7,
+        "fiberG": 6.7
+      },
+      "glycemicClass": "low",
+      "allergens": [
+        "tree_nuts"
+      ],
+      "safetyNotes": [
+        "Kind unter 5: ganze Nüsse sind Erstickungsrisiko, nur gemahlen/als Mus."
+      ]
+    },
+    {
+      "id": "mandel",
+      "nameDe": "Mandel",
+      "category": "nut_seed",
+      "localCY": true,
+      "userListedLocal": false,
+      "per100g": {
+        "kcal": 579,
+        "proteinG": 21.2,
+        "fatG": 49.9,
+        "carbsG": 21.6,
+        "fiberG": 12.5
+      },
+      "glycemicClass": "low",
+      "allergens": [
+        "tree_nuts"
+      ],
+      "safetyNotes": [
+        "Kind unter 5: ganze Nüsse sind Erstickungsrisiko, nur gemahlen/als Mus."
+      ]
+    },
+    {
+      "id": "blaubeere-tk",
+      "nameDe": "Blaubeere, tiefgekühlt",
+      "category": "fruit",
+      "localCY": false,
+      "userListedLocal": true,
+      "per100g": {
+        "kcal": 57,
+        "proteinG": 0.7,
+        "fatG": 0.3,
+        "carbsG": 14.5,
+        "fiberG": 2.4
+      },
+      "glycemicClass": "low",
+      "allergens": [],
+      "safetyNotes": []
+    },
+    {
+      "id": "frischkorn-mix",
+      "nameDe": "Frischkorn-Mix (Dinkel/Hafer/Buchweizen), trocken",
+      "category": "grain",
+      "localCY": false,
+      "userListedLocal": true,
+      "per100g": {
+        "kcal": 355,
+        "proteinG": 12.5,
+        "fatG": 3.5,
+        "carbsG": 63,
+        "fiberG": 9
+      },
+      "glycemicClass": "medium",
+      "allergens": [
+        "gluten"
+      ],
+      "safetyNotes": [
+        "Rohes Getreide: mind. 8 h gequollen im Kühlschrank, binnen 24 h verzehren (Keimbelastung roher Mehle)."
+      ]
+    },
+    {
+      "id": "ei",
+      "nameDe": "Ei, Hühnerei, roh",
+      "category": "egg",
+      "localCY": true,
+      "userListedLocal": false,
+      "per100g": {
+        "kcal": 143,
+        "proteinG": 12.6,
+        "fatG": 9.5,
+        "carbsG": 0.7,
+        "fiberG": 0
+      },
+      "glycemicClass": "low",
+      "allergens": [
+        "eggs"
+      ],
+      "safetyNotes": []
+    },
+    {
+      "id": "schafjoghurt",
+      "nameDe": "Schaf-/Ziegenjoghurt, natur, ungezuckert",
+      "category": "dairy",
+      "localCY": true,
+      "userListedLocal": false,
+      "per100g": {
+        "kcal": 95,
+        "proteinG": 6,
+        "fatG": 6.5,
+        "carbsG": 4,
+        "fiberG": 0
+      },
+      "glycemicClass": "low",
+      "allergens": [
+        "milk"
+      ],
+      "safetyNotes": [
+        "Casein-reich, langsamer verdaulich als Anari."
+      ]
+    },
+    {
+      "id": "horta",
+      "nameDe": "Horta / Wildkräuter-Mix (Ampfer, Löwenzahn, Spinat)",
+      "category": "vegetable",
+      "localCY": true,
+      "userListedLocal": true,
+      "per100g": {
+        "kcal": 22,
+        "proteinG": 2.5,
+        "fatG": 0.4,
+        "carbsG": 2.5,
+        "fiberG": 2
+      },
+      "glycemicClass": "low",
+      "allergens": [],
+      "safetyNotes": []
+    },
+    {
+      "id": "zucchini",
+      "nameDe": "Zucchini",
+      "category": "vegetable",
+      "localCY": true,
+      "userListedLocal": true,
+      "per100g": {
+        "kcal": 17,
+        "proteinG": 1.2,
+        "fatG": 0.3,
+        "carbsG": 3.1,
+        "fiberG": 1
+      },
+      "glycemicClass": "low",
+      "allergens": [],
+      "safetyNotes": []
+    },
+    {
+      "id": "tomate",
+      "nameDe": "Tomate",
+      "category": "vegetable",
+      "localCY": true,
+      "userListedLocal": true,
+      "per100g": {
+        "kcal": 18,
+        "proteinG": 0.9,
+        "fatG": 0.2,
+        "carbsG": 3.9,
+        "fiberG": 1.2
+      },
+      "glycemicClass": "low",
+      "allergens": [],
+      "safetyNotes": []
+    },
+    {
+      "id": "gurke",
+      "nameDe": "Gurke",
+      "category": "vegetable",
+      "localCY": true,
+      "userListedLocal": true,
+      "per100g": {
+        "kcal": 15,
+        "proteinG": 0.7,
+        "fatG": 0.1,
+        "carbsG": 3.6,
+        "fiberG": 0.5
+      },
+      "glycemicClass": "low",
+      "allergens": [],
+      "safetyNotes": []
+    },
+    {
+      "id": "aubergine",
+      "nameDe": "Aubergine",
+      "category": "vegetable",
+      "localCY": true,
+      "userListedLocal": true,
+      "per100g": {
+        "kcal": 25,
+        "proteinG": 1,
+        "fatG": 0.2,
+        "carbsG": 6,
+        "fiberG": 3
+      },
+      "glycemicClass": "low",
+      "allergens": [],
+      "safetyNotes": []
+    },
+    {
+      "id": "brokkoli",
+      "nameDe": "Brokkoli",
+      "category": "vegetable",
+      "localCY": true,
+      "userListedLocal": true,
+      "per100g": {
+        "kcal": 34,
+        "proteinG": 2.8,
+        "fatG": 0.4,
+        "carbsG": 7,
+        "fiberG": 2.6
+      },
+      "glycemicClass": "low",
+      "allergens": [],
+      "safetyNotes": []
+    },
+    {
+      "id": "zwiebel",
+      "nameDe": "Zwiebel",
+      "category": "vegetable",
+      "localCY": true,
+      "userListedLocal": true,
+      "per100g": {
+        "kcal": 40,
+        "proteinG": 1.1,
+        "fatG": 0.1,
+        "carbsG": 9.3,
+        "fiberG": 1.7
+      },
+      "glycemicClass": "low",
+      "allergens": [],
+      "safetyNotes": []
+    },
+    {
+      "id": "kraeuter",
+      "nameDe": "Kräuter frisch (Petersilie/Dill/Minze)",
+      "category": "herb",
+      "localCY": true,
+      "userListedLocal": true,
+      "per100g": {
+        "kcal": 36,
+        "proteinG": 3,
+        "fatG": 0.8,
+        "carbsG": 6,
+        "fiberG": 3.3
+      },
+      "glycemicClass": "low",
+      "allergens": [],
+      "safetyNotes": []
+    },
+    {
+      "id": "zitronensaft",
+      "nameDe": "Zitronensaft",
+      "category": "fruit",
+      "localCY": true,
+      "userListedLocal": true,
+      "per100g": {
+        "kcal": 22,
+        "proteinG": 0.4,
+        "fatG": 0.2,
+        "carbsG": 6.9,
+        "fiberG": 0.3
+      },
+      "glycemicClass": "low",
+      "allergens": [],
+      "safetyNotes": []
+    },
+    {
+      "id": "avocado",
+      "nameDe": "Avocado",
+      "category": "fruit",
+      "localCY": true,
+      "userListedLocal": false,
+      "per100g": {
+        "kcal": 160,
+        "proteinG": 2,
+        "fatG": 14.7,
+        "carbsG": 8.5,
+        "fiberG": 6.7
+      },
+      "glycemicClass": "low",
+      "allergens": [],
+      "safetyNotes": []
+    },
+    {
+      "id": "kichererbse-gekocht",
+      "nameDe": "Kichererbsen, gekocht",
+      "category": "legume",
+      "localCY": false,
+      "userListedLocal": false,
+      "per100g": {
+        "kcal": 164,
+        "proteinG": 8.9,
+        "fatG": 2.6,
+        "carbsG": 27.4,
+        "fiberG": 7.6
+      },
+      "glycemicClass": "low",
+      "allergens": [],
+      "safetyNotes": []
+    },
+    {
+      "id": "linsen-gekocht",
+      "nameDe": "Linsen, gekocht",
+      "category": "legume",
+      "localCY": false,
+      "userListedLocal": false,
+      "per100g": {
+        "kcal": 116,
+        "proteinG": 9,
+        "fatG": 0.4,
+        "carbsG": 20.1,
+        "fiberG": 7.9
+      },
+      "glycemicClass": "low",
+      "allergens": [],
+      "safetyNotes": []
+    },
+    {
+      "id": "bulgur-trocken",
+      "nameDe": "Bulgur, trocken",
+      "category": "grain",
+      "localCY": false,
+      "userListedLocal": false,
+      "per100g": {
+        "kcal": 342,
+        "proteinG": 12.3,
+        "fatG": 1.3,
+        "carbsG": 75.9,
+        "fiberG": 12.5
+      },
+      "glycemicClass": "medium",
+      "allergens": [
+        "gluten"
+      ],
+      "safetyNotes": []
+    },
+    {
+      "id": "oktopus",
+      "nameDe": "Oktopus, roh",
+      "category": "protein_fish",
+      "localCY": true,
+      "userListedLocal": true,
+      "per100g": {
+        "kcal": 82,
+        "proteinG": 14.9,
+        "fatG": 1.0,
+        "carbsG": 2.2,
+        "fiberG": 0
+      },
+      "glycemicClass": "low",
+      "allergens": [
+        "molluscs"
+      ],
+      "safetyNotes": [
+        "Gegart ca. 40-50 % leichter als roh.",
+        "Kind unter 5: zäh, Erstickungsrisiko, nicht für die Tochter."
+      ]
+    },
+    {
+      "id": "lamm-kotelett",
+      "nameDe": "Lamm-Kotelett, roh, mit Fett (inkl. Knochen nicht eingerechnet)",
+      "category": "protein_meat",
+      "localCY": true,
+      "userListedLocal": true,
+      "per100g": {
+        "kcal": 250,
+        "proteinG": 16,
+        "fatG": 20,
+        "carbsG": 0,
+        "fiberG": 0
+      },
+      "glycemicClass": "low",
+      "allergens": [],
+      "safetyNotes": [
+        "Fett abschneiden senkt Kalorien deutlich; essbarer Anteil nach Garen und ohne Knochen ca. 60-65 % des Rohgewichts."
+      ]
+    },
+    {
+      "id": "sauerteigbrot",
+      "nameDe": "Sauerteigbrot (Weizen/Roggen)",
+      "category": "grain",
+      "localCY": false,
+      "userListedLocal": false,
+      "per100g": {
+        "kcal": 250,
+        "proteinG": 8.5,
+        "fatG": 1.5,
+        "carbsG": 49,
+        "fiberG": 3.5
+      },
+      "glycemicClass": "medium",
+      "allergens": [
+        "gluten"
+      ],
+      "safetyNotes": []
+    }
+  ],
+  "components": [
+    {
+      "id": "bowl-frischkorn-anari-walnuss",
+      "nameDe": "Frischkorn-Bowl mit Anari, Walnuss, Blaubeeren",
+      "type": "bowl",
+      "ingredients": [
+        {
+          "ingredientId": "frischkorn-mix",
+          "grams": 80
+        },
+        {
+          "ingredientId": "anari",
+          "grams": 250
+        },
+        {
+          "ingredientId": "walnuss",
+          "grams": 25
+        },
+        {
+          "ingredientId": "blaubeere-tk",
+          "grams": 100
+        },
+        {
+          "ingredientId": "zitronensaft",
+          "grams": 5
+        }
+      ],
+      "nutritionPerAdultPortion": {
+        "kcal": 880.6,
+        "proteinG": 39.5,
+        "fatG": 46.9,
+        "carbsG": 76.2,
+        "fiberG": 11.3
+      },
+      "childSplit": {
+        "separable": false,
+        "seasoningAfterSplit": false,
+        "childNotes": []
+      },
+      "thermomix": {
+        "useCase": "mill",
+        "steps": [
+          {
+            "order": 1,
+            "action": "Frischkorn trocken mahlen",
+            "temperatureC": null,
+            "timeMin": 1,
+            "speed": "10"
+          },
+          {
+            "order": 2,
+            "action": "Schrot mit ca. 160 g kaltem Wasser und Zitronensaft verrühren, abgedeckt im Kühlschrank quellen lassen",
+            "temperatureC": null,
+            "timeMin": null,
+            "speed": null
+          }
+        ],
+        "tips": [
+          "Am Vorabend ansetzen: 8-12 h Quellzeit senkt Phytat und verbessert Zink/Magnesium-Aufnahme.",
+          "Mixtopf nach dem Mahlen kurz auskühlen lassen."
+        ]
+      },
+      "tags": [
+        "high_protein",
+        "complex_carb",
+        "contains_raw_grain",
+        "dairy_whey"
+      ]
+    },
+    {
+      "id": "bowl-anari-beeren-mandel",
+      "nameDe": "Anari-Bowl mit Beeren, Mandeln, Frischkornflocken",
+      "type": "bowl",
+      "ingredients": [
+        {
+          "ingredientId": "anari",
+          "grams": 300
+        },
+        {
+          "ingredientId": "blaubeere-tk",
+          "grams": 120
+        },
+        {
+          "ingredientId": "mandel",
+          "grams": 30
+        },
+        {
+          "ingredientId": "frischkorn-mix",
+          "grams": 40
+        }
+      ],
+      "nutritionPerAdultPortion": {
+        "kcal": 834.1,
+        "proteinG": 42.2,
+        "fatG": 49.7,
+        "carbsG": 58.1,
+        "fiberG": 10.2
+      },
+      "childSplit": {
+        "separable": false,
+        "seasoningAfterSplit": false,
+        "childNotes": []
+      },
+      "thermomix": {
+        "useCase": "none",
+        "steps": [],
+        "tips": []
+      },
+      "tags": [
+        "high_protein",
+        "complex_carb",
+        "no_cook",
+        "dairy_whey"
+      ]
+    },
+    {
+      "id": "bowl-frischkorn-anari-mandel-tahini",
+      "nameDe": "Frischkorn-Bowl mit Anari, Mandel, Tahini",
+      "type": "bowl",
+      "ingredients": [
+        {
+          "ingredientId": "frischkorn-mix",
+          "grams": 80
+        },
+        {
+          "ingredientId": "anari",
+          "grams": 200
+        },
+        {
+          "ingredientId": "mandel",
+          "grams": 25
+        },
+        {
+          "ingredientId": "tahini",
+          "grams": 10
+        },
+        {
+          "ingredientId": "blaubeere-tk",
+          "grams": 100
+        }
+      ],
+      "nutritionPerAdultPortion": {
+        "kcal": 845.2,
+        "proteinG": 37.7,
+        "fatG": 43.0,
+        "carbsG": 78.4,
+        "fiberG": 13.7
+      },
+      "childSplit": {
+        "separable": false,
+        "seasoningAfterSplit": false,
+        "childNotes": []
+      },
+      "thermomix": {
+        "useCase": "mill",
+        "steps": [
+          {
+            "order": 1,
+            "action": "Frischkorn trocken mahlen",
+            "temperatureC": null,
+            "timeMin": 1,
+            "speed": "10"
+          },
+          {
+            "order": 2,
+            "action": "Mit kaltem Wasser anrühren, mind. 8 h quellen lassen",
+            "temperatureC": null,
+            "timeMin": null,
+            "speed": null
+          }
+        ],
+        "tips": [
+          "Tahini erst beim Anrichten zugeben (Mixtopf bleibt sauber)."
+        ]
+      },
+      "tags": [
+        "high_protein",
+        "complex_carb",
+        "contains_raw_grain",
+        "dairy_whey"
+      ]
+    },
+    {
+      "id": "plate-eier-horta-avocado",
+      "nameDe": "Ei-Horta-Teller mit Avocado und Anari",
+      "type": "plate",
+      "ingredients": [
+        {
+          "ingredientId": "ei",
+          "grams": 250
+        },
+        {
+          "ingredientId": "horta",
+          "grams": 150
+        },
+        {
+          "ingredientId": "evoo",
+          "grams": 15
+        },
+        {
+          "ingredientId": "avocado",
+          "grams": 100
+        },
+        {
+          "ingredientId": "anari",
+          "grams": 150
+        }
+      ],
+      "nutritionPerAdultPortion": {
+        "kcal": 908.1,
+        "proteinG": 52.2,
+        "fatG": 70.5,
+        "carbsG": 18.5,
+        "fiberG": 9.7
+      },
+      "childSplit": {
+        "separable": false,
+        "seasoningAfterSplit": false,
+        "childNotes": []
+      },
+      "thermomix": {
+        "useCase": "varoma_steam",
+        "steps": [
+          {
+            "order": 1,
+            "action": "Horta im Varoma-Behälter dämpfen",
+            "temperatureC": 120,
+            "timeMin": 6,
+            "speed": "1"
+          },
+          {
+            "order": 2,
+            "action": "Eier im Einlegeboden mitgaren (weich: ca. 6-7 min, hart: 10-12 min) oder in der Pfanne als Omelett",
+            "temperatureC": null,
+            "timeMin": null,
+            "speed": null
+          }
+        ],
+        "tips": [
+          "Varoma-Zeiten sind Richtwerte, Wasser vorher aufkochen lassen."
+        ]
+      },
+      "tags": [
+        "low_carb",
+        "high_protein",
+        "egg",
+        "dairy_whey"
+      ]
+    },
+    {
+      "id": "bowl-anari-walnuss-lowcarb",
+      "nameDe": "Anari-Walnuss-Bowl (low carb)",
+      "type": "bowl",
+      "ingredients": [
+        {
+          "ingredientId": "anari",
+          "grams": 400
+        },
+        {
+          "ingredientId": "walnuss",
+          "grams": 30
+        },
+        {
+          "ingredientId": "tahini",
+          "grams": 15
+        },
+        {
+          "ingredientId": "blaubeere-tk",
+          "grams": 50
+        }
+      ],
+      "nutritionPerAdultPortion": {
+        "kcal": 914.0,
+        "proteinG": 47.5,
+        "fatG": 71.8,
+        "carbsG": 26.5,
+        "fiberG": 4.6
+      },
+      "childSplit": {
+        "separable": false,
+        "seasoningAfterSplit": false,
+        "childNotes": []
+      },
+      "thermomix": {
+        "useCase": "none",
+        "steps": [],
+        "tips": []
+      },
+      "tags": [
+        "low_carb",
+        "high_protein",
+        "no_cook",
+        "dairy_whey"
+      ]
+    },
+    {
+      "id": "p-lavraki-varoma",
+      "nameDe": "Lavraki aus dem Varoma, Zitrone-Kräuter",
+      "type": "protein",
+      "ingredients": [
+        {
+          "ingredientId": "lavraki",
+          "grams": 250
+        },
+        {
+          "ingredientId": "evoo",
+          "grams": 10
+        },
+        {
+          "ingredientId": "zitronensaft",
+          "grams": 10
+        },
+        {
+          "ingredientId": "kraeuter",
+          "grams": 5
+        }
+      ],
+      "nutritionPerAdultPortion": {
+        "kcal": 392.4,
+        "proteinG": 47.7,
+        "fatG": 21.3,
+        "carbsG": 1.0,
+        "fiberG": 0.2
+      },
+      "childSplit": {
+        "separable": true,
+        "seasoningAfterSplit": true,
+        "childNotes": [
+          "Ohne Salz und Zitrone abnehmen, Gräten kontrollieren."
+        ]
+      },
+      "thermomix": {
+        "useCase": "varoma_steam",
+        "steps": [
+          {
+            "order": 1,
+            "action": "700-800 g Wasser im Mixtopf zum Kochen bringen",
+            "temperatureC": 120,
+            "timeMin": 8,
+            "speed": "1"
+          },
+          {
+            "order": 2,
+            "action": "Filets auf den Einlegeboden, mit Öl/Zitrone/Kräutern, nach 10-15 min Kartoffeln-Garzeit dazustellen",
+            "temperatureC": 120,
+            "timeMin": 12,
+            "speed": "1"
+          }
+        ],
+        "tips": [
+          "Fisch geht in die obere Ebene (Einlegeboden), damit er nicht im Kondensat steht."
+        ]
+      },
+      "tags": [
+        "fish",
+        "high_protein"
+      ]
+    },
+    {
+      "id": "p-tsipoura-varoma",
+      "nameDe": "Tsipoura aus dem Varoma, Zitrone-Kräuter",
+      "type": "protein",
+      "ingredients": [
+        {
+          "ingredientId": "tsipoura",
+          "grams": 250
+        },
+        {
+          "ingredientId": "evoo",
+          "grams": 10
+        },
+        {
+          "ingredientId": "zitronensaft",
+          "grams": 10
+        },
+        {
+          "ingredientId": "kraeuter",
+          "grams": 5
+        }
+      ],
+      "nutritionPerAdultPortion": {
+        "kcal": 379.9,
+        "proteinG": 48.9,
+        "fatG": 19.6,
+        "carbsG": 1.0,
+        "fiberG": 0.2
+      },
+      "childSplit": {
+        "separable": true,
+        "seasoningAfterSplit": true,
+        "childNotes": [
+          "Ohne Salz und Zitrone abnehmen, Gräten kontrollieren."
+        ]
+      },
+      "thermomix": {
+        "useCase": "varoma_steam",
+        "steps": [
+          {
+            "order": 1,
+            "action": "Wasser im Mixtopf zum Kochen bringen",
+            "temperatureC": 120,
+            "timeMin": 8,
+            "speed": "1"
+          },
+          {
+            "order": 2,
+            "action": "Filets im Einlegeboden garen",
+            "temperatureC": 120,
+            "timeMin": 12,
+            "speed": "1"
+          }
+        ],
+        "tips": []
+      },
+      "tags": [
+        "fish",
+        "high_protein"
+      ]
+    },
+    {
+      "id": "p-lamm-schmor",
+      "nameDe": "Lamm-Schmorgericht mit Tomate und Zwiebel (mild)",
+      "type": "protein",
+      "ingredients": [
+        {
+          "ingredientId": "lamm-keule",
+          "grams": 230
+        },
+        {
+          "ingredientId": "tomate",
+          "grams": 100
+        },
+        {
+          "ingredientId": "zwiebel",
+          "grams": 40
+        },
+        {
+          "ingredientId": "evoo",
+          "grams": 10
+        },
+        {
+          "ingredientId": "kraeuter",
+          "grams": 5
+        }
+      ],
+      "nutritionPerAdultPortion": {
+        "kcal": 469.2,
+        "proteinG": 47.5,
+        "fatG": 27.5,
+        "carbsG": 7.9,
+        "fiberG": 2.0
+      },
+      "childSplit": {
+        "separable": true,
+        "seasoningAfterSplit": true,
+        "childNotes": [
+          "Kein Salz/Pfeffer vor der Abnahme, Stücke klein schneiden."
+        ]
+      },
+      "thermomix": {
+        "useCase": "cook",
+        "steps": [
+          {
+            "order": 1,
+            "action": "Zwiebel und Öl andünsten",
+            "temperatureC": 100,
+            "timeMin": 3,
+            "speed": "1"
+          },
+          {
+            "order": 2,
+            "action": "Lamm in 3 cm Würfeln, Tomate, 100 g Wasser zugeben, schmoren",
+            "temperatureC": 100,
+            "timeMin": 45,
+            "speed": "Sanftrührstufe"
+          }
+        ],
+        "tips": [
+          "Doppelte Menge kochen: Rest ist die kalte/warme Mahlzeit am Folgetag (Batch).",
+          "Garzeit je nach Fleisch 40-60 min, Gabeltest."
+        ]
+      },
+      "tags": [
+        "red_meat",
+        "high_protein",
+        "batch_cookable"
+      ]
+    },
+    {
+      "id": "p-ziege-schmor",
+      "nameDe": "Ziegen-Schmorgericht mit Tomate und Zwiebel (mild)",
+      "type": "protein",
+      "ingredients": [
+        {
+          "ingredientId": "ziege",
+          "grams": 250
+        },
+        {
+          "ingredientId": "tomate",
+          "grams": 100
+        },
+        {
+          "ingredientId": "zwiebel",
+          "grams": 40
+        },
+        {
+          "ingredientId": "evoo",
+          "grams": 10
+        },
+        {
+          "ingredientId": "kraeuter",
+          "grams": 5
+        }
+      ],
+      "nutritionPerAdultPortion": {
+        "kcal": 399.2,
+        "proteinG": 52.7,
+        "fatG": 16.5,
+        "carbsG": 7.9,
+        "fiberG": 2.0
+      },
+      "childSplit": {
+        "separable": true,
+        "seasoningAfterSplit": true,
+        "childNotes": [
+          "Kein Salz/Pfeffer vor der Abnahme, Stücke klein schneiden."
+        ]
+      },
+      "thermomix": {
+        "useCase": "cook",
+        "steps": [
+          {
+            "order": 1,
+            "action": "Zwiebel und Öl andampfen",
+            "temperatureC": 100,
+            "timeMin": 3,
+            "speed": "1"
+          },
+          {
+            "order": 2,
+            "action": "Ziege in 3 cm Würfeln, Tomate, 100 g Wasser zugeben, schmoren",
+            "temperatureC": 100,
+            "timeMin": 55,
+            "speed": "Sanftrührstufe"
+          }
+        ],
+        "tips": [
+          "Ziege ist mager und braucht eher länger: 50-70 min."
+        ]
+      },
+      "tags": [
+        "red_meat",
+        "high_protein",
+        "batch_cookable"
+      ]
+    },
+    {
+      "id": "p-anari-pur",
+      "nameDe": "Anari mit Öl und Kräutern",
+      "type": "protein",
+      "ingredients": [
+        {
+          "ingredientId": "anari",
+          "grams": 300
+        },
+        {
+          "ingredientId": "evoo",
+          "grams": 10
+        },
+        {
+          "ingredientId": "kraeuter",
+          "grams": 5
+        }
+      ],
+      "nutritionPerAdultPortion": {
+        "kcal": 540.2,
+        "proteinG": 30.1,
+        "fatG": 43.0,
+        "carbsG": 9.3,
+        "fiberG": 0.2
+      },
+      "childSplit": {
+        "separable": true,
+        "seasoningAfterSplit": true,
+        "childNotes": []
+      },
+      "thermomix": {
+        "useCase": "none",
+        "steps": [],
+        "tips": []
+      },
+      "tags": [
+        "high_protein",
+        "no_cook",
+        "dairy_whey"
+      ]
+    },
+    {
+      "id": "c-kartoffel-varoma",
+      "nameDe": "Zypriotische Kartoffeln, Varoma",
+      "type": "carb_complex",
+      "ingredients": [
+        {
+          "ingredientId": "kartoffel",
+          "grams": 400
+        }
+      ],
+      "nutritionPerAdultPortion": {
+        "kcal": 308.0,
+        "proteinG": 8.0,
+        "fatG": 0.4,
+        "carbsG": 68.0,
+        "fiberG": 8.8
+      },
+      "childSplit": {
+        "separable": true,
+        "seasoningAfterSplit": true,
+        "childNotes": [
+          "Ungesalzen abnehmen, als Stampf oder Spalten."
+        ]
+      },
+      "thermomix": {
+        "useCase": "varoma_steam",
+        "steps": [
+          {
+            "order": 1,
+            "action": "Wasser im Mixtopf aufkochen, Kartoffeln in 2-cm-Stücken in den Varoma-Behälter",
+            "temperatureC": 120,
+            "timeMin": 25,
+            "speed": "1"
+          }
+        ],
+        "tips": [
+          "Mit Fisch kombinieren: Kartoffeln zuerst, Fisch nach 10-15 min in den Einlegeboden."
+        ]
+      },
+      "tags": [
+        "complex_carb"
+      ]
+    },
+    {
+      "id": "c-kolokasi-gegart",
+      "nameDe": "Kolokasi, vollständig gegart",
+      "type": "carb_complex",
+      "ingredients": [
+        {
+          "ingredientId": "kolokasi",
+          "grams": 300
+        }
+      ],
+      "nutritionPerAdultPortion": {
+        "kcal": 336.0,
+        "proteinG": 4.5,
+        "fatG": 0.6,
+        "carbsG": 79.5,
+        "fiberG": 12.3
+      },
+      "childSplit": {
+        "separable": true,
+        "seasoningAfterSplit": true,
+        "childNotes": [
+          "Muss weich durchgegart sein, nie roh oder bissfest."
+        ]
+      },
+      "thermomix": {
+        "useCase": "varoma_steam",
+        "steps": [
+          {
+            "order": 1,
+            "action": "Schälen (Handschuhe), in 3-cm-Stücke, Varoma",
+            "temperatureC": 120,
+            "timeMin": 35,
+            "speed": "1"
+          },
+          {
+            "order": 2,
+            "action": "Auf Weichheit prüfen; Kondensat/Kochwasser verwerfen",
+            "temperatureC": null,
+            "timeMin": null,
+            "speed": null
+          }
+        ],
+        "tips": [
+          "Oxalat-Reizung ist bei nicht durchgegarter Kolokasi typisch: lieber 5 min länger."
+        ]
+      },
+      "tags": [
+        "complex_carb"
+      ]
+    },
+    {
+      "id": "c-bulgur",
+      "nameDe": "Bulgur",
+      "type": "carb_complex",
+      "ingredients": [
+        {
+          "ingredientId": "bulgur-trocken",
+          "grams": 90
+        }
+      ],
+      "nutritionPerAdultPortion": {
+        "kcal": 307.8,
+        "proteinG": 11.1,
+        "fatG": 1.2,
+        "carbsG": 68.3,
+        "fiberG": 11.2
+      },
+      "childSplit": {
+        "separable": true,
+        "seasoningAfterSplit": true,
+        "childNotes": []
+      },
+      "thermomix": {
+        "useCase": "combined",
+        "steps": [
+          {
+            "order": 1,
+            "action": "Bulgur mit der doppelten Menge Wasser im Gareinsatz oder Mixtopf garen",
+            "temperatureC": 100,
+            "timeMin": 12,
+            "speed": "Linkslauf Löffelstufe"
+          }
+        ],
+        "tips": []
+      },
+      "tags": [
+        "complex_carb",
+        "plant_protein"
+      ]
+    },
+    {
+      "id": "c-linsen",
+      "nameDe": "Linsen, gekocht",
+      "type": "carb_complex",
+      "ingredients": [
+        {
+          "ingredientId": "linsen-gekocht",
+          "grams": 250
+        }
+      ],
+      "nutritionPerAdultPortion": {
+        "kcal": 290.0,
+        "proteinG": 22.5,
+        "fatG": 1.0,
+        "carbsG": 50.2,
+        "fiberG": 19.8
+      },
+      "childSplit": {
+        "separable": true,
+        "seasoningAfterSplit": true,
+        "childNotes": []
+      },
+      "thermomix": {
+        "useCase": "cook",
+        "steps": [
+          {
+            "order": 1,
+            "action": "ca. 90-100 g trockene Linsen mit Wasser garen",
+            "temperatureC": 100,
+            "timeMin": 22,
+            "speed": "1"
+          }
+        ],
+        "tips": [
+          "Mit Lamm-Schmorgericht in einem Topf möglich: Linsen nach 25 min zugeben."
+        ]
+      },
+      "tags": [
+        "complex_carb",
+        "plant_protein"
+      ]
+    },
+    {
+      "id": "c-kichererbsen",
+      "nameDe": "Kichererbsen, gekocht",
+      "type": "carb_complex",
+      "ingredients": [
+        {
+          "ingredientId": "kichererbse-gekocht",
+          "grams": 200
+        }
+      ],
+      "nutritionPerAdultPortion": {
+        "kcal": 328.0,
+        "proteinG": 17.8,
+        "fatG": 5.2,
+        "carbsG": 54.8,
+        "fiberG": 15.2
+      },
+      "childSplit": {
+        "separable": true,
+        "seasoningAfterSplit": true,
+        "childNotes": []
+      },
+      "thermomix": {
+        "useCase": "none",
+        "steps": [],
+        "tips": []
+      },
+      "tags": [
+        "complex_carb",
+        "plant_protein"
+      ]
+    },
+    {
+      "id": "v-horta",
+      "nameDe": "Horta, gedämpft mit Zitrone",
+      "type": "vegetable",
+      "ingredients": [
+        {
+          "ingredientId": "horta",
+          "grams": 200
+        },
+        {
+          "ingredientId": "evoo",
+          "grams": 10
+        },
+        {
+          "ingredientId": "zitronensaft",
+          "grams": 10
+        }
+      ],
+      "nutritionPerAdultPortion": {
+        "kcal": 134.6,
+        "proteinG": 5.0,
+        "fatG": 10.8,
+        "carbsG": 5.7,
+        "fiberG": 4.0
+      },
+      "childSplit": {
+        "separable": true,
+        "seasoningAfterSplit": true,
+        "childNotes": []
+      },
+      "thermomix": {
+        "useCase": "varoma_steam",
+        "steps": [
+          {
+            "order": 1,
+            "action": "Im Varoma-Behälter dämpfen",
+            "temperatureC": 120,
+            "timeMin": 6,
+            "speed": "1"
+          }
+        ],
+        "tips": []
+      },
+      "tags": [
+        "low_carb"
+      ]
+    },
+    {
+      "id": "v-zucchini-tomate",
+      "nameDe": "Zucchini-Tomaten-Gemüse",
+      "type": "vegetable",
+      "ingredients": [
+        {
+          "ingredientId": "zucchini",
+          "grams": 150
+        },
+        {
+          "ingredientId": "tomate",
+          "grams": 100
+        },
+        {
+          "ingredientId": "evoo",
+          "grams": 10
+        }
+      ],
+      "nutritionPerAdultPortion": {
+        "kcal": 131.9,
+        "proteinG": 2.7,
+        "fatG": 10.7,
+        "carbsG": 8.6,
+        "fiberG": 2.7
+      },
+      "childSplit": {
+        "separable": true,
+        "seasoningAfterSplit": true,
+        "childNotes": []
+      },
+      "thermomix": {
+        "useCase": "varoma_steam",
+        "steps": [
+          {
+            "order": 1,
+            "action": "Zucchini in Scheiben im Varoma",
+            "temperatureC": 120,
+            "timeMin": 12,
+            "speed": "1"
+          }
+        ],
+        "tips": []
+      },
+      "tags": [
+        "low_carb"
+      ]
+    },
+    {
+      "id": "v-gurken-tomaten-salat",
+      "nameDe": "Gurken-Tomaten-Salat",
+      "type": "vegetable",
+      "ingredients": [
+        {
+          "ingredientId": "gurke",
+          "grams": 150
+        },
+        {
+          "ingredientId": "tomate",
+          "grams": 150
+        },
+        {
+          "ingredientId": "evoo",
+          "grams": 15
+        },
+        {
+          "ingredientId": "zitronensaft",
+          "grams": 10
+        },
+        {
+          "ingredientId": "kraeuter",
+          "grams": 5
+        }
+      ],
+      "nutritionPerAdultPortion": {
+        "kcal": 186.1,
+        "proteinG": 2.6,
+        "fatG": 15.5,
+        "carbsG": 12.2,
+        "fiberG": 2.7
+      },
+      "childSplit": {
+        "separable": true,
+        "seasoningAfterSplit": true,
+        "childNotes": []
+      },
+      "thermomix": {
+        "useCase": "none",
+        "steps": [],
+        "tips": []
+      },
+      "tags": [
+        "low_carb",
+        "no_cook"
+      ]
+    },
+    {
+      "id": "v-brokkoli",
+      "nameDe": "Brokkoli, gedämpft",
+      "type": "vegetable",
+      "ingredients": [
+        {
+          "ingredientId": "brokkoli",
+          "grams": 250
+        },
+        {
+          "ingredientId": "evoo",
+          "grams": 10
+        }
+      ],
+      "nutritionPerAdultPortion": {
+        "kcal": 173.4,
+        "proteinG": 7.0,
+        "fatG": 11.0,
+        "carbsG": 17.5,
+        "fiberG": 6.5
+      },
+      "childSplit": {
+        "separable": true,
+        "seasoningAfterSplit": true,
+        "childNotes": []
+      },
+      "thermomix": {
+        "useCase": "varoma_steam",
+        "steps": [
+          {
+            "order": 1,
+            "action": "Röschen im Varoma",
+            "temperatureC": 120,
+            "timeMin": 10,
+            "speed": "1"
+          }
+        ],
+        "tips": []
+      },
+      "tags": [
+        "low_carb"
+      ]
+    },
+    {
+      "id": "v-aubergine",
+      "nameDe": "Aubergine, im Varoma weich gegart",
+      "type": "vegetable",
+      "ingredients": [
+        {
+          "ingredientId": "aubergine",
+          "grams": 250
+        },
+        {
+          "ingredientId": "evoo",
+          "grams": 15
+        }
+      ],
+      "nutritionPerAdultPortion": {
+        "kcal": 195.1,
+        "proteinG": 2.5,
+        "fatG": 15.5,
+        "carbsG": 15.0,
+        "fiberG": 7.5
+      },
+      "childSplit": {
+        "separable": true,
+        "seasoningAfterSplit": true,
+        "childNotes": []
+      },
+      "thermomix": {
+        "useCase": "varoma_steam",
+        "steps": [
+          {
+            "order": 1,
+            "action": "Würfel im Varoma",
+            "temperatureC": 120,
+            "timeMin": 14,
+            "speed": "1"
+          }
+        ],
+        "tips": []
+      },
+      "tags": [
+        "low_carb"
+      ]
+    },
+    {
+      "id": "s-tahini-zitrone",
+      "nameDe": "Tahini-Zitronen-Sauce",
+      "type": "sauce_fat",
+      "ingredients": [
+        {
+          "ingredientId": "tahini",
+          "grams": 30
+        },
+        {
+          "ingredientId": "zitronensaft",
+          "grams": 15
+        }
+      ],
+      "nutritionPerAdultPortion": {
+        "kcal": 181.8,
+        "proteinG": 5.2,
+        "fatG": 16.2,
+        "carbsG": 7.4,
+        "fiberG": 2.8
+      },
+      "childSplit": {
+        "separable": true,
+        "seasoningAfterSplit": true,
+        "childNotes": [
+          "Sesam: bisher keine bekannte Allergie, Einführung bei Neuaufnahme beobachten."
+        ]
+      },
+      "thermomix": {
+        "useCase": "blend",
+        "steps": [
+          {
+            "order": 1,
+            "action": "Tahini, Zitronensaft, 40-50 g Wasser mixen",
+            "temperatureC": null,
+            "timeMin": 0.2,
+            "speed": "5"
+          }
+        ],
+        "tips": []
+      },
+      "tags": [
+        "low_carb"
+      ]
+    },
+    {
+      "id": "f-avocado",
+      "nameDe": "Avocado",
+      "type": "sauce_fat",
+      "ingredients": [
+        {
+          "ingredientId": "avocado",
+          "grams": 100
+        }
+      ],
+      "nutritionPerAdultPortion": {
+        "kcal": 160.0,
+        "proteinG": 2.0,
+        "fatG": 14.7,
+        "carbsG": 8.5,
+        "fiberG": 6.7
+      },
+      "childSplit": {
+        "separable": true,
+        "seasoningAfterSplit": true,
+        "childNotes": []
+      },
+      "thermomix": {
+        "useCase": "none",
+        "steps": [],
+        "tips": []
+      },
+      "tags": [
+        "low_carb",
+        "no_cook"
+      ]
+    },
+    {
+      "id": "snack-joghurt-nuss",
+      "nameDe": "Schaf-/Ziegenjoghurt mit Walnuss und Beeren",
+      "type": "snack",
+      "ingredients": [
+        {
+          "ingredientId": "schafjoghurt",
+          "grams": 250
+        },
+        {
+          "ingredientId": "walnuss",
+          "grams": 15
+        },
+        {
+          "ingredientId": "blaubeere-tk",
+          "grams": 50
+        }
+      ],
+      "nutritionPerAdultPortion": {
+        "kcal": 364.1,
+        "proteinG": 17.6,
+        "fatG": 26.2,
+        "carbsG": 19.3,
+        "fiberG": 2.2
+      },
+      "childSplit": {
+        "separable": false,
+        "seasoningAfterSplit": false,
+        "childNotes": []
+      },
+      "thermomix": {
+        "useCase": "none",
+        "steps": [],
+        "tips": []
+      },
+      "tags": [
+        "high_protein",
+        "no_cook"
+      ]
+    },
+    {
+      "id": "taverna-lavraki-grill",
+      "nameDe": "Lavraki vom Grill (Taverne)",
+      "type": "protein",
+      "ingredients": [
+        {
+          "ingredientId": "lavraki",
+          "grams": 300
+        },
+        {
+          "ingredientId": "evoo",
+          "grams": 10
+        }
+      ],
+      "nutritionPerAdultPortion": {
+        "kcal": 448.4,
+        "proteinG": 57.0,
+        "fatG": 23.5,
+        "carbsG": 0.0,
+        "fiberG": 0.0
+      },
+      "childSplit": {
+        "separable": true,
+        "seasoningAfterSplit": true,
+        "childNotes": [
+          "Ohne Salz und Zitrone bestellen, Gräten entfernen lassen."
+        ]
+      },
+      "thermomix": {
+        "useCase": "none",
+        "steps": [],
+        "tips": []
+      },
+      "tags": [
+        "fish",
+        "high_protein"
+      ]
+    },
+    {
+      "id": "taverna-oktopus",
+      "nameDe": "Oktopus gegrillt (Vorspeise, geteilt)",
+      "type": "protein",
+      "ingredients": [
+        {
+          "ingredientId": "oktopus",
+          "grams": 250
+        },
+        {
+          "ingredientId": "evoo",
+          "grams": 10
+        }
+      ],
+      "nutritionPerAdultPortion": {
+        "kcal": 293.4,
+        "proteinG": 37.2,
+        "fatG": 12.5,
+        "carbsG": 5.5,
+        "fiberG": 0.0
+      },
+      "childSplit": {
+        "separable": true,
+        "seasoningAfterSplit": true,
+        "childNotes": [
+          "Nicht für die Tochter (zäh, Erstickungsrisiko)."
+        ]
+      },
+      "thermomix": {
+        "useCase": "none",
+        "steps": [],
+        "tips": []
+      },
+      "tags": [
+        "high_protein"
+      ]
+    },
+    {
+      "id": "taverna-lamm-kotelett",
+      "nameDe": "Lamm-Koteletts vom Grill (Taverne)",
+      "type": "protein",
+      "ingredients": [
+        {
+          "ingredientId": "lamm-kotelett",
+          "grams": 300
+        }
+      ],
+      "nutritionPerAdultPortion": {
+        "kcal": 750.0,
+        "proteinG": 48.0,
+        "fatG": 60.0,
+        "carbsG": 0.0,
+        "fiberG": 0.0
+      },
+      "childSplit": {
+        "separable": true,
+        "seasoningAfterSplit": true,
+        "childNotes": [
+          "Fleisch vom Knochen lösen, in kleine Stücke schneiden, ohne Salz."
+        ]
+      },
+      "thermomix": {
+        "useCase": "none",
+        "steps": [],
+        "tips": []
+      },
+      "tags": [
+        "red_meat",
+        "high_protein"
+      ]
+    },
+    {
+      "id": "p-brunch-eier",
+      "nameDe": "Eier (Rührei oder pochiert)",
+      "type": "protein",
+      "ingredients": [
+        {
+          "ingredientId": "ei",
+          "grams": 250
+        },
+        {
+          "ingredientId": "evoo",
+          "grams": 10
+        }
+      ],
+      "nutritionPerAdultPortion": {
+        "kcal": 445.9,
+        "proteinG": 31.5,
+        "fatG": 33.8,
+        "carbsG": 1.8,
+        "fiberG": 0.0
+      },
+      "childSplit": {
+        "separable": true,
+        "seasoningAfterSplit": true,
+        "childNotes": [
+          "Ei vollständig durchgaren."
+        ]
+      },
+      "thermomix": {
+        "useCase": "varoma_steam",
+        "steps": [
+          {
+            "order": 1,
+            "action": "Wasser im Mixtopf aufkochen",
+            "temperatureC": 120,
+            "timeMin": 8,
+            "speed": "1"
+          },
+          {
+            "order": 2,
+            "action": "Eier im Einlegeboden: weich 6-7 min, hart 10-12 min",
+            "temperatureC": 120,
+            "timeMin": 11,
+            "speed": "1"
+          }
+        ],
+        "tips": [
+          "Alternativ Rührei in der Pfanne, Kind-Portion zuerst abnehmen."
+        ]
+      },
+      "tags": [
+        "egg",
+        "high_protein"
+      ]
+    },
+    {
+      "id": "p-brunch-anari",
+      "nameDe": "Anari mit Kräutern und Zitrone",
+      "type": "protein",
+      "ingredients": [
+        {
+          "ingredientId": "anari",
+          "grams": 250
+        },
+        {
+          "ingredientId": "kraeuter",
+          "grams": 5
+        },
+        {
+          "ingredientId": "zitronensaft",
+          "grams": 10
+        }
+      ],
+      "nutritionPerAdultPortion": {
+        "kcal": 379.0,
+        "proteinG": 25.2,
+        "fatG": 27.6,
+        "carbsG": 8.5,
+        "fiberG": 0.2
+      },
+      "childSplit": {
+        "separable": true,
+        "seasoningAfterSplit": true,
+        "childNotes": []
+      },
+      "thermomix": {
+        "useCase": "none",
+        "steps": [],
+        "tips": []
+      },
+      "tags": [
+        "high_protein",
+        "no_cook",
+        "dairy_whey"
+      ]
+    },
+    {
+      "id": "c-sauerteig",
+      "nameDe": "Sauerteigbrot, getoastet",
+      "type": "carb_complex",
+      "ingredients": [
+        {
+          "ingredientId": "sauerteigbrot",
+          "grams": 80
+        }
+      ],
+      "nutritionPerAdultPortion": {
+        "kcal": 200.0,
+        "proteinG": 6.8,
+        "fatG": 1.2,
+        "carbsG": 39.2,
+        "fiberG": 2.8
+      },
+      "childSplit": {
+        "separable": true,
+        "seasoningAfterSplit": true,
+        "childNotes": []
+      },
+      "thermomix": {
+        "useCase": "none",
+        "steps": [],
+        "tips": []
+      },
+      "tags": [
+        "complex_carb"
+      ]
+    }
+  ],
+  "meals": [
+    {
+      "id": "first-t-frischkorn-walnuss",
+      "nameDe": "Fastenbrechen Trainingstag: Frischkorn-Bowl Walnuss",
+      "slot": "first_meal",
+      "window": {
+        "start": "13:30",
+        "end": "14:00"
+      },
+      "componentRefs": [
+        {
+          "componentId": "bowl-frischkorn-anari-walnuss",
+          "portionFactors": {
+            "father": 1.0
+          }
+        }
+      ],
+      "dayTypeFit": [
+        "training_day"
+      ],
+      "notes": []
+    },
+    {
+      "id": "first-t-anari-bowl",
+      "nameDe": "Fastenbrechen Trainingstag: Anari-Bowl",
+      "slot": "first_meal",
+      "window": {
+        "start": "13:30",
+        "end": "14:00"
+      },
+      "componentRefs": [
+        {
+          "componentId": "bowl-anari-beeren-mandel",
+          "portionFactors": {
+            "father": 1.0
+          }
+        }
+      ],
+      "dayTypeFit": [
+        "training_day"
+      ],
+      "notes": []
+    },
+    {
+      "id": "first-t-frischkorn-mandel",
+      "nameDe": "Fastenbrechen Trainingstag: Frischkorn-Bowl Mandel-Tahini",
+      "slot": "first_meal",
+      "window": {
+        "start": "13:30",
+        "end": "14:00"
+      },
+      "componentRefs": [
+        {
+          "componentId": "bowl-frischkorn-anari-mandel-tahini",
+          "portionFactors": {
+            "father": 1.0
+          }
+        }
+      ],
+      "dayTypeFit": [
+        "training_day"
+      ],
+      "notes": []
+    },
+    {
+      "id": "first-r-eier-horta",
+      "nameDe": "Fastenbrechen Ruhetag: Ei-Horta-Teller",
+      "slot": "first_meal",
+      "window": {
+        "start": "13:00",
+        "end": "13:30"
+      },
+      "componentRefs": [
+        {
+          "componentId": "plate-eier-horta-avocado",
+          "portionFactors": {
+            "father": 1.0
+          }
+        }
+      ],
+      "dayTypeFit": [
+        "rest_day"
+      ],
+      "notes": []
+    },
+    {
+      "id": "first-r-anari-lowcarb",
+      "nameDe": "Fastenbrechen Ruhetag: Anari-Walnuss-Bowl",
+      "slot": "first_meal",
+      "window": {
+        "start": "13:00",
+        "end": "13:30"
+      },
+      "componentRefs": [
+        {
+          "componentId": "bowl-anari-walnuss-lowcarb",
+          "portionFactors": {
+            "father": 1.0
+          }
+        }
+      ],
+      "dayTypeFit": [
+        "rest_day"
+      ],
+      "notes": []
+    },
+    {
+      "id": "dinner-mon",
+      "nameDe": "Abend Mo: Lavraki, Kartoffeln, Horta",
+      "slot": "dinner",
+      "window": {
+        "start": "18:30",
+        "end": "19:30"
+      },
+      "componentRefs": [
+        {
+          "componentId": "p-lavraki-varoma",
+          "portionFactors": {
+            "father": 1.0,
+            "mother": 0.8,
+            "child": 0.3
+          }
+        },
+        {
+          "componentId": "c-kartoffel-varoma",
+          "portionFactors": {
+            "father": 1.0,
+            "mother": 0.8,
+            "child": 0.35
+          }
+        },
+        {
+          "componentId": "v-horta",
+          "portionFactors": {
+            "father": 1.0,
+            "mother": 0.8,
+            "child": 0.4
+          }
+        },
+        {
+          "componentId": "s-tahini-zitrone",
+          "portionFactors": {
+            "father": 1.0,
+            "mother": 0.8,
+            "child": 0.3
+          }
+        }
+      ],
+      "dayTypeFit": [
+        "training_day"
+      ],
+      "notes": [
+        "Varoma-Kombi: Kartoffeln unten, Fisch oben, ein Gerät, eine Spüle."
+      ]
+    },
+    {
+      "id": "dinner-tue",
+      "nameDe": "Abend Di: Lamm-Schmorgericht, Zucchini, Bulgur für Mutter/Kind",
+      "slot": "dinner",
+      "window": {
+        "start": "18:30",
+        "end": "19:30"
+      },
+      "componentRefs": [
+        {
+          "componentId": "p-lamm-schmor",
+          "portionFactors": {
+            "father": 1.0,
+            "mother": 0.8,
+            "child": 0.3
+          }
+        },
+        {
+          "componentId": "v-zucchini-tomate",
+          "portionFactors": {
+            "father": 1.0,
+            "mother": 0.8,
+            "child": 0.4
+          }
+        },
+        {
+          "componentId": "c-bulgur",
+          "portionFactors": {
+            "father": 0.0,
+            "mother": 0.8,
+            "child": 0.35
+          }
+        }
+      ],
+      "dayTypeFit": [
+        "rest_day"
+      ],
+      "notes": [
+        "Doppelte Lammmenge kochen, Rest für Do-Mittag (Batch)."
+      ]
+    },
+    {
+      "id": "dinner-wed",
+      "nameDe": "Abend Mi: Ziegen-Schmorgericht, Kolokasi, Gurken-Tomaten-Salat",
+      "slot": "dinner",
+      "window": {
+        "start": "18:30",
+        "end": "19:30"
+      },
+      "componentRefs": [
+        {
+          "componentId": "p-ziege-schmor",
+          "portionFactors": {
+            "father": 1.0,
+            "mother": 0.8,
+            "child": 0.3
+          }
+        },
+        {
+          "componentId": "c-kolokasi-gegart",
+          "portionFactors": {
+            "father": 1.0,
+            "mother": 0.8,
+            "child": 0.35
+          }
+        },
+        {
+          "componentId": "v-gurken-tomaten-salat",
+          "portionFactors": {
+            "father": 1.0,
+            "mother": 0.8,
+            "child": 0.4
+          }
+        }
+      ],
+      "dayTypeFit": [
+        "training_day"
+      ],
+      "notes": []
+    },
+    {
+      "id": "dinner-thu",
+      "nameDe": "Abend Do: Tsipoura, Brokkoli, Tahini, Kartoffeln für Mutter/Kind",
+      "slot": "dinner",
+      "window": {
+        "start": "18:30",
+        "end": "19:30"
+      },
+      "componentRefs": [
+        {
+          "componentId": "p-tsipoura-varoma",
+          "portionFactors": {
+            "father": 1.0,
+            "mother": 0.8,
+            "child": 0.3
+          }
+        },
+        {
+          "componentId": "v-brokkoli",
+          "portionFactors": {
+            "father": 1.0,
+            "mother": 0.8,
+            "child": 0.4
+          }
+        },
+        {
+          "componentId": "s-tahini-zitrone",
+          "portionFactors": {
+            "father": 1.0,
+            "mother": 0.8,
+            "child": 0.3
+          }
+        },
+        {
+          "componentId": "c-kartoffel-varoma",
+          "portionFactors": {
+            "father": 0.0,
+            "mother": 0.8,
+            "child": 0.35
+          }
+        }
+      ],
+      "dayTypeFit": [
+        "rest_day"
+      ],
+      "notes": []
+    },
+    {
+      "id": "dinner-fri",
+      "nameDe": "Abend Fr: Lamm-Linsen-Topf mit Bulgur, Aubergine",
+      "slot": "dinner",
+      "window": {
+        "start": "18:30",
+        "end": "19:30"
+      },
+      "componentRefs": [
+        {
+          "componentId": "p-lamm-schmor",
+          "portionFactors": {
+            "father": 1.0,
+            "mother": 0.8,
+            "child": 0.3
+          }
+        },
+        {
+          "componentId": "c-linsen",
+          "portionFactors": {
+            "father": 1.0,
+            "mother": 0.8,
+            "child": 0.35
+          }
+        },
+        {
+          "componentId": "c-bulgur",
+          "portionFactors": {
+            "father": 1.0,
+            "mother": 0.8,
+            "child": 0.35
+          }
+        },
+        {
+          "componentId": "v-aubergine",
+          "portionFactors": {
+            "father": 1.0,
+            "mother": 0.8,
+            "child": 0.4
+          }
+        }
+      ],
+      "dayTypeFit": [
+        "training_day"
+      ],
+      "notes": [
+        "Höchster Kohlenhydrat-Abend der Woche (Glykogen-Auffüllung vor Wochenende)."
+      ]
+    },
+    {
+      "id": "dinner-sat",
+      "nameDe": "Abend Sa: Lavraki, Horta, Avocado, Kartoffeln für Mutter/Kind",
+      "slot": "dinner",
+      "window": {
+        "start": "18:30",
+        "end": "19:30"
+      },
+      "componentRefs": [
+        {
+          "componentId": "p-lavraki-varoma",
+          "portionFactors": {
+            "father": 1.0,
+            "mother": 0.8,
+            "child": 0.3
+          }
+        },
+        {
+          "componentId": "v-horta",
+          "portionFactors": {
+            "father": 1.0,
+            "mother": 0.8,
+            "child": 0.4
+          }
+        },
+        {
+          "componentId": "f-avocado",
+          "portionFactors": {
+            "father": 1.0,
+            "mother": 0.5,
+            "child": 0.3
+          }
+        },
+        {
+          "componentId": "c-kartoffel-varoma",
+          "portionFactors": {
+            "father": 0.0,
+            "mother": 0.8,
+            "child": 0.35
+          }
+        }
+      ],
+      "dayTypeFit": [
+        "rest_day"
+      ],
+      "notes": []
+    },
+    {
+      "id": "snack-evening-yogurt",
+      "nameDe": "Spätsnack: Schafjoghurt (Casein)",
+      "slot": "optional_snack",
+      "window": {
+        "start": "20:30",
+        "end": "21:30"
+      },
+      "componentRefs": [
+        {
+          "componentId": "snack-joghurt-nuss",
+          "portionFactors": {
+            "father": 1.0
+          }
+        }
+      ],
+      "dayTypeFit": [
+        "training_day",
+        "rest_day"
+      ],
+      "notes": [
+        "Casein-reicher Schafjoghurt mit Walnuss und Beeren; liefert ca. 18 g Protein (fester Bestandteil des Tagesplans, Faktor 1,0)."
+      ]
+    },
+    {
+      "id": "dinner-sat-taverna",
+      "nameDe": "Samstag Taverne: Restaurant-Leitfaden",
+      "slot": "dinner",
+      "window": {
+        "start": "18:30",
+        "end": "20:30"
+      },
+      "componentRefs": [
+        {
+          "componentId": "taverna-lavraki-grill",
+          "portionFactors": {
+            "father": 1.0,
+            "mother": 0.8,
+            "child": 0.3
+          }
+        },
+        {
+          "componentId": "taverna-oktopus",
+          "portionFactors": {
+            "father": 0.5,
+            "mother": 0.5,
+            "child": 0.0
+          }
+        },
+        {
+          "componentId": "taverna-lamm-kotelett",
+          "portionFactors": {
+            "father": 0.0,
+            "mother": 0.8,
+            "child": 0.3
+          }
+        },
+        {
+          "componentId": "v-horta",
+          "portionFactors": {
+            "father": 1.0,
+            "mother": 0.8,
+            "child": 0.4
+          }
+        },
+        {
+          "componentId": "s-tahini-zitrone",
+          "portionFactors": {
+            "father": 1.0,
+            "mother": 0.8,
+            "child": 0.3
+          }
+        }
+      ],
+      "dayTypeFit": [
+        "rest_day"
+      ],
+      "notes": [
+        "Bestell-Hilfe: 1 Hauptgang pro Erwachsenem (Lavraki vom Grill nach Gewicht), dazu Horta mit Zitrone und Tahini-Dip.",
+        "Oktopus als geteilte Vorspeise (Vater ca. 0,5 Portion); für die Tochter nicht geeignet.",
+        "Lamm-Koteletts sind die Alternative zum Lavraki für den Vater; Rotfleisch-Budget der Woche beachten.",
+        "Brot, Pommes, Ofenkartoffeln nur für Mutter und Kind; Vater lässt sie weg (Ruhetag).",
+        "Kind-Portion ohne Salz und ohne Schärfe bestellen, Fisch ohne Gräten.",
+        "Dinner-Stack (Zink, Magnesium) zum Essen mitnehmen und dort einnehmen."
+      ]
+    },
+    {
+      "id": "first-r-sun-brunch",
+      "nameDe": "Sonntag Familien-Brunch: Anari, Eier, Avocado, Sauerteig",
+      "slot": "first_meal",
+      "window": {
+        "start": "12:00",
+        "end": "13:30"
+      },
+      "componentRefs": [
+        {
+          "componentId": "p-brunch-eier",
+          "portionFactors": {
+            "father": 1.0,
+            "mother": 0.8,
+            "child": 0.3
+          }
+        },
+        {
+          "componentId": "p-brunch-anari",
+          "portionFactors": {
+            "father": 1.0,
+            "mother": 0.8,
+            "child": 0.3
+          }
+        },
+        {
+          "componentId": "f-avocado",
+          "portionFactors": {
+            "father": 1.0,
+            "mother": 0.5,
+            "child": 0.3
+          }
+        },
+        {
+          "componentId": "c-sauerteig",
+          "portionFactors": {
+            "father": 0.7,
+            "mother": 0.8,
+            "child": 0.35
+          }
+        }
+      ],
+      "dayTypeFit": [
+        "rest_day"
+      ],
+      "notes": [
+        "Gemeinsames Fastenbrechen der Familie; Uhrzeit 12:30 ist eine Annahme (offene Entscheidung)."
+      ]
+    },
+    {
+      "id": "dinner-sun-light",
+      "nameDe": "Sonntag flexibles leichtes Abendessen: Tsipoura, Salat, Horta",
+      "slot": "dinner",
+      "window": {
+        "start": "18:30",
+        "end": "20:00"
+      },
+      "componentRefs": [
+        {
+          "componentId": "p-tsipoura-varoma",
+          "portionFactors": {
+            "father": 1.0,
+            "mother": 0.8,
+            "child": 0.3
+          }
+        },
+        {
+          "componentId": "v-gurken-tomaten-salat",
+          "portionFactors": {
+            "father": 1.0,
+            "mother": 0.8,
+            "child": 0.4
+          }
+        },
+        {
+          "componentId": "v-horta",
+          "portionFactors": {
+            "father": 1.0,
+            "mother": 0.8,
+            "child": 0.4
+          }
+        }
+      ],
+      "dayTypeFit": [
+        "rest_day"
+      ],
+      "notes": [
+        "Flex: Reste, Anari-Teller oder Joghurt sind ok, solange das Protein-Ziel des Tages erreicht wird."
+      ]
+    }
+  ],
+  "supplements": [
+    {
+      "id": "creatine-monohydrate",
+      "nameDe": "Kreatin-Monohydrat",
+      "adultOnly": true,
+      "dosePolicy": "fixed_range",
+      "dose": {
+        "min": 5,
+        "max": 5,
+        "unit": "g"
+      },
+      "takeWith": "any_meal",
+      "rationale": {
+        "text": "Erhöht Phosphokreatin-Speicher, ATP-Resynthese bei kurzer hoher Intensität; belegte Wirkung auf Kraft und Muskelmasse.",
+        "confidence": "sicher",
+        "references": [
+          "ISSN Position Stand Kreatin, Kreider et al. 2017"
+        ]
+      },
+      "upperIntakeReference": null,
+      "interactions": [],
+      "monitoring": [
+        "Serum-Kreatinin steigt harmlos an: bei Nierenlabor Cystatin C verwenden."
+      ],
+      "flags": [
+        {
+          "text": "Tageszeit ist für die Wirkung zweitrangig; zum ersten Essen genügt, nüchtern vor dem Training bringt nichts.",
+          "confidence": "wahrscheinlich"
+        }
+      ]
+    },
+    {
+      "id": "omega3-epa-dha",
+      "nameDe": "Omega-3 (EPA+DHA)",
+      "adultOnly": true,
+      "dosePolicy": "fixed_range",
+      "dose": {
+        "min": 2,
+        "max": 3,
+        "unit": "g"
+      },
+      "takeWith": "fat_containing_meal",
+      "rationale": {
+        "text": "Entzündungsmodulation, Membranlipide; fettlöslich, Aufnahme mit fetthaltiger Mahlzeit deutlich besser.",
+        "confidence": "wahrscheinlich"
+      },
+      "upperIntakeReference": {
+        "value": 5,
+        "unit": "g",
+        "authority": "EFSA 2012 (Opinion Omega-3)",
+        "scope": "nur Supplemente, EPA+DHA; Aussage aus Gedächtnis, vor Nutzung prüfen; EFSA-DHA-Opinion 2026 nicht gelesen"
+      },
+      "interactions": [
+        "Blutverdünner (Wirkung additiv)"
+      ],
+      "monitoring": [
+        "Omega-3-Index optional"
+      ],
+      "flags": [
+        {
+          "text": "An Fischtagen (Lavraki/Tsipoura) liefert die Mahlzeit schon ca. 0.5-1 g EPA+DHA pro Portion (Schätzung, Zuchtfisch); Summe im Blick behalten.",
+          "confidence": "vermutung"
+        }
+      ]
+    },
+    {
+      "id": "coq10",
+      "nameDe": "Coenzym Q10",
+      "adultOnly": true,
+      "dosePolicy": "fixed_range",
+      "dose": {
+        "min": 100,
+        "max": 200,
+        "unit": "mg"
+      },
+      "takeWith": "fat_containing_meal",
+      "rationale": {
+        "text": "Elektronentransportkette, Antioxidans; Leistungsnutzen bei Gesunden in Studien uneinheitlich.",
+        "confidence": "vermutung"
+      },
+      "upperIntakeReference": null,
+      "interactions": [
+        "Blutverdünner (Warfarin) möglich"
+      ],
+      "monitoring": [],
+      "flags": [
+        {
+          "text": "Evidenz für Muskelaufbau schwach: Kosten-Nutzen ehrlich prüfen.",
+          "confidence": "wahrscheinlich"
+        }
+      ]
+    },
+    {
+      "id": "vitamin-d3",
+      "nameDe": "Vitamin D3",
+      "adultOnly": true,
+      "dosePolicy": "lab_guided",
+      "dose": null,
+      "takeWith": "fat_containing_meal",
+      "rationale": {
+        "text": "Knochen, Muskelfunktion, Immunsystem; fettlöslich.",
+        "confidence": "sicher"
+      },
+      "upperIntakeReference": {
+        "value": 100,
+        "unit": "ug",
+        "authority": "EFSA",
+        "scope": "gesamt, Erwachsene (4000 IU)"
+      },
+      "interactions": [
+        "Hohe Dosen erhöhen Kalziumaufnahme"
+      ],
+      "monitoring": [
+        "25(OH)D vor Start und nach 8-12 Wochen"
+      ],
+      "flags": [
+        {
+          "text": "Dosis erst nach Laborwert: auf Zypern ist die Sonnenexposition hoch, Pauschaldosis kann überflüssig sein.",
+          "confidence": "wahrscheinlich"
+        }
+      ]
+    },
+    {
+      "id": "vitamin-k2-mk7",
+      "nameDe": "Vitamin K2 (MK-7)",
+      "adultOnly": true,
+      "dosePolicy": "lab_guided",
+      "dose": null,
+      "takeWith": "fat_containing_meal",
+      "rationale": {
+        "text": "Carboxylierung von Osteocalcin/MGP; sinnvoll v.a. in Kombination mit D3-Supplementierung.",
+        "confidence": "wahrscheinlich"
+      },
+      "upperIntakeReference": null,
+      "interactions": [
+        "Vitamin-K-Antagonisten (Marcumar/Warfarin): nicht ohne Arzt"
+      ],
+      "monitoring": [],
+      "flags": []
+    },
+    {
+      "id": "magnesium-bisglycinate",
+      "nameDe": "Magnesiumbisglycinat",
+      "adultOnly": true,
+      "dosePolicy": "fixed_range",
+      "dose": {
+        "min": 150,
+        "max": 150,
+        "unit": "mg",
+        "elemental": true
+      },
+      "takeWith": "with_dinner",
+      "rationale": {
+        "text": "Cofaktor ATP-abhängiger Reaktionen, neuromuskuläre Entspannung; Bisglycinat ist gut verträglich.",
+        "confidence": "wahrscheinlich"
+      },
+      "upperIntakeReference": {
+        "value": 250,
+        "unit": "mg",
+        "authority": "EFSA (US IOM: 350 mg)",
+        "scope": "nur Supplement, leicht dissoziierbare Salze; Aussage geprüft anhand EFSA-Zusammenfassung 2017"
+      },
+      "interactions": [
+        "Chinolon-/Tetrazyklin-Antibiotika: zeitlich trennen"
+      ],
+      "monitoring": [
+        "Bei Durchfall Dosis senken"
+      ],
+      "flags": [
+        {
+          "text": "Zweimal 150 mg elementar ergibt 300 mg Tagesdosis und liegt damit über der EFSA-Orientierung von 250 mg aus Supplementen. 2 x 125 mg wäre konform; Risiko des höheren Werts sind weiche Stühle.",
+          "confidence": "sicher"
+        }
+      ]
+    },
+    {
+      "id": "glycine",
+      "nameDe": "Glycin",
+      "adultOnly": true,
+      "dosePolicy": "fixed_range",
+      "dose": {
+        "min": 3,
+        "max": 5,
+        "unit": "g"
+      },
+      "takeWith": "before_sleep",
+      "rationale": {
+        "text": "Senkt Körperkerntemperatur, kann Einschlafzeit und subjektive Schlafqualität verbessern (kleine Studien, 3 g).",
+        "confidence": "wahrscheinlich"
+      },
+      "upperIntakeReference": null,
+      "interactions": [],
+      "monitoring": [],
+      "flags": []
+    },
+    {
+      "id": "zinc",
+      "nameDe": "Zink",
+      "adultOnly": true,
+      "dosePolicy": "fixed_range",
+      "dose": {
+        "min": 15,
+        "max": 15,
+        "unit": "mg"
+      },
+      "takeWith": "with_dinner",
+      "rationale": {
+        "text": "Enzyme der Proteinsynthese, Immunfunktion; auf 15 mg gedrosselt wegen Kupfer-Balance und EFSA-Gesamtobergrenze.",
+        "confidence": "wahrscheinlich"
+      },
+      "upperIntakeReference": {
+        "value": 25,
+        "unit": "mg",
+        "authority": "EFSA (US: 40 mg)",
+        "scope": "gesamt aus Nahrung + Supplementen; geprüft anhand EFSA-Zusammenfassung 2017"
+      },
+      "interactions": [
+        "Kupfer-Antagonismus bei dauerhaft hoher Dosis",
+        "Eisen und Kalzium konkurrieren bei Aufnahme"
+      ],
+      "monitoring": [
+        "Zink, Kupfer, Ceruloplasmin nach 3 Monaten"
+      ],
+      "flags": [
+        {
+          "text": "EFSA-Obergrenze 25 mg gilt für Nahrung plus Supplement. Mit Lamm, Ziege und Fisch liefert die Kost schon einen großen Teil: 15 mg Supplement kann in Summe an die Grenze kommen. Zink/Kupfer-Labor nach 3 Monaten.",
+          "confidence": "wahrscheinlich"
+        }
+      ]
+    }
+  ],
+  "supplementProtocols": [
+    {
+      "id": "protocol-midday",
+      "nameDe": "Mittags-Stack (zum ersten Essen)",
+      "slot": "with_first_meal",
+      "items": [
+        {
+          "supplementId": "creatine-monohydrate",
+          "dose": {
+            "min": 5,
+            "max": 5,
+            "unit": "g"
+          }
+        },
+        {
+          "supplementId": "omega3-epa-dha",
+          "dose": {
+            "min": 2,
+            "max": 3,
+            "unit": "g"
+          },
+          "note": "Nur mit Mahlzeit, die mind. 10-15 g Fett enthält."
+        },
+        {
+          "supplementId": "coq10",
+          "dose": {
+            "min": 100,
+            "max": 200,
+            "unit": "mg"
+          }
+        },
+        {
+          "supplementId": "vitamin-d3",
+          "dose": null,
+          "note": "Dosis nach Laborwert."
+        },
+        {
+          "supplementId": "vitamin-k2-mk7",
+          "dose": null
+        }
+      ]
+    },
+    {
+      "id": "protocol-dinner",
+      "nameDe": "Abend-Stack (zum Abendessen)",
+      "slot": "with_dinner",
+      "items": [
+        {
+          "supplementId": "zinc",
+          "dose": {
+            "min": 15,
+            "max": 15,
+            "unit": "mg"
+          },
+          "note": "Gedrosselt wegen Kupfer-Balance; zum Abendessen, nicht nüchtern."
+        },
+        {
+          "supplementId": "magnesium-bisglycinate",
+          "dose": {
+            "min": 150,
+            "max": 150,
+            "unit": "mg",
+            "elemental": true
+          },
+          "note": "150 mg elementar je Slot (Summe 300 mg/Tag)."
+        }
+      ]
+    },
+    {
+      "id": "protocol-sleep",
+      "nameDe": "Schlaf-Stack (30-60 min vor dem Schlafen)",
+      "slot": "before_sleep",
+      "items": [
+        {
+          "supplementId": "glycine",
+          "dose": {
+            "min": 3,
+            "max": 5,
+            "unit": "g"
+          }
+        },
+        {
+          "supplementId": "magnesium-bisglycinate",
+          "dose": {
+            "min": 150,
+            "max": 150,
+            "unit": "mg",
+            "elemental": true
+          },
+          "note": "150 mg elementar je Slot (Summe 300 mg/Tag)."
+        }
+      ]
+    }
+  ],
+  "weekPlan": {
+    "days": [
+      {
+        "weekday": "mon",
+        "dayType": "training_day",
+        "workouts": [
+          {
+            "type": "calisthenics_morning",
+            "timeOfDay": "morning",
+            "durationMin": 20,
+            "fasted": true,
+            "notes": [
+              "Nüchtern, 20 Minuten."
+            ],
+            "startTime": "06:30"
+          },
+          {
+            "type": "strength_session",
+            "timeOfDay": "midday",
+            "startTime": "12:30",
+            "durationMin": 60,
+            "fasted": true,
+            "notes": [
+              "Nüchtern, vor dem ersten Essen. In Hitze: schattig/innen, Wasser plus Elektrolyte."
+            ]
+          }
+        ],
+        "meals": [
+          {
+            "slot": "first_meal",
+            "mealId": "first-t-frischkorn-walnuss",
+            "targetTime": "13:45"
+          },
+          {
+            "slot": "dinner",
+            "mealId": "dinner-mon",
+            "targetTime": "18:45"
+          },
+          {
+            "slot": "optional_snack",
+            "mealId": "snack-evening-yogurt",
+            "targetTime": "20:45",
+            "optional": false
+          }
+        ],
+        "supplementSlots": [
+          {
+            "slot": "with_first_meal",
+            "protocolId": "protocol-midday",
+            "targetTime": "13:45"
+          },
+          {
+            "slot": "with_dinner",
+            "protocolId": "protocol-dinner",
+            "targetTime": "18:45"
+          },
+          {
+            "slot": "before_sleep",
+            "protocolId": "protocol-sleep",
+            "targetTime": "21:30"
+          }
+        ]
+      },
+      {
+        "weekday": "tue",
+        "dayType": "rest_day",
+        "workouts": [
+          {
+            "type": "calisthenics_morning",
+            "timeOfDay": "morning",
+            "durationMin": 20,
+            "fasted": true,
+            "notes": [
+              "Nüchtern, 20 Minuten."
+            ],
+            "startTime": "06:30"
+          }
+        ],
+        "meals": [
+          {
+            "slot": "first_meal",
+            "mealId": "first-r-eier-horta",
+            "targetTime": "13:00"
+          },
+          {
+            "slot": "dinner",
+            "mealId": "dinner-tue",
+            "targetTime": "18:45"
+          },
+          {
+            "slot": "optional_snack",
+            "mealId": "snack-evening-yogurt",
+            "targetTime": "20:45",
+            "optional": false
+          }
+        ],
+        "supplementSlots": [
+          {
+            "slot": "with_first_meal",
+            "protocolId": "protocol-midday",
+            "targetTime": "13:00"
+          },
+          {
+            "slot": "with_dinner",
+            "protocolId": "protocol-dinner",
+            "targetTime": "18:45"
+          },
+          {
+            "slot": "before_sleep",
+            "protocolId": "protocol-sleep",
+            "targetTime": "21:30"
+          }
+        ]
+      },
+      {
+        "weekday": "wed",
+        "dayType": "training_day",
+        "workouts": [
+          {
+            "type": "calisthenics_morning",
+            "timeOfDay": "morning",
+            "durationMin": 20,
+            "fasted": true,
+            "notes": [
+              "Nüchtern, 20 Minuten."
+            ],
+            "startTime": "06:30"
+          },
+          {
+            "type": "strength_session",
+            "timeOfDay": "midday",
+            "startTime": "12:30",
+            "durationMin": 60,
+            "fasted": true,
+            "notes": [
+              "Nüchtern, vor dem ersten Essen. In Hitze: schattig/innen, Wasser plus Elektrolyte."
+            ]
+          }
+        ],
+        "meals": [
+          {
+            "slot": "first_meal",
+            "mealId": "first-t-anari-bowl",
+            "targetTime": "13:45"
+          },
+          {
+            "slot": "dinner",
+            "mealId": "dinner-wed",
+            "targetTime": "18:45"
+          },
+          {
+            "slot": "optional_snack",
+            "mealId": "snack-evening-yogurt",
+            "targetTime": "20:45",
+            "optional": false
+          }
+        ],
+        "supplementSlots": [
+          {
+            "slot": "with_first_meal",
+            "protocolId": "protocol-midday",
+            "targetTime": "13:45"
+          },
+          {
+            "slot": "with_dinner",
+            "protocolId": "protocol-dinner",
+            "targetTime": "18:45"
+          },
+          {
+            "slot": "before_sleep",
+            "protocolId": "protocol-sleep",
+            "targetTime": "21:30"
+          }
+        ]
+      },
+      {
+        "weekday": "thu",
+        "dayType": "rest_day",
+        "workouts": [
+          {
+            "type": "calisthenics_morning",
+            "timeOfDay": "morning",
+            "durationMin": 20,
+            "fasted": true,
+            "notes": [
+              "Nüchtern, 20 Minuten."
+            ],
+            "startTime": "06:30"
+          }
+        ],
+        "meals": [
+          {
+            "slot": "first_meal",
+            "mealId": "first-r-anari-lowcarb",
+            "targetTime": "13:00"
+          },
+          {
+            "slot": "dinner",
+            "mealId": "dinner-thu",
+            "targetTime": "18:45"
+          },
+          {
+            "slot": "optional_snack",
+            "mealId": "snack-evening-yogurt",
+            "targetTime": "20:45",
+            "optional": false
+          }
+        ],
+        "supplementSlots": [
+          {
+            "slot": "with_first_meal",
+            "protocolId": "protocol-midday",
+            "targetTime": "13:00"
+          },
+          {
+            "slot": "with_dinner",
+            "protocolId": "protocol-dinner",
+            "targetTime": "18:45"
+          },
+          {
+            "slot": "before_sleep",
+            "protocolId": "protocol-sleep",
+            "targetTime": "21:30"
+          }
+        ]
+      },
+      {
+        "weekday": "fri",
+        "dayType": "training_day",
+        "workouts": [
+          {
+            "type": "calisthenics_morning",
+            "timeOfDay": "morning",
+            "durationMin": 20,
+            "fasted": true,
+            "notes": [
+              "Nüchtern, 20 Minuten."
+            ],
+            "startTime": "06:30"
+          },
+          {
+            "type": "strength_session",
+            "timeOfDay": "midday",
+            "startTime": "12:30",
+            "durationMin": 60,
+            "fasted": true,
+            "notes": [
+              "Nüchtern, vor dem ersten Essen. In Hitze: schattig/innen, Wasser plus Elektrolyte."
+            ]
+          }
+        ],
+        "meals": [
+          {
+            "slot": "first_meal",
+            "mealId": "first-t-frischkorn-mandel",
+            "targetTime": "13:45"
+          },
+          {
+            "slot": "dinner",
+            "mealId": "dinner-fri",
+            "targetTime": "18:45"
+          },
+          {
+            "slot": "optional_snack",
+            "mealId": "snack-evening-yogurt",
+            "targetTime": "20:45",
+            "optional": false
+          }
+        ],
+        "supplementSlots": [
+          {
+            "slot": "with_first_meal",
+            "protocolId": "protocol-midday",
+            "targetTime": "13:45"
+          },
+          {
+            "slot": "with_dinner",
+            "protocolId": "protocol-dinner",
+            "targetTime": "18:45"
+          },
+          {
+            "slot": "before_sleep",
+            "protocolId": "protocol-sleep",
+            "targetTime": "21:30"
+          }
+        ]
+      },
+      {
+        "weekday": "sat",
+        "dayType": "rest_day",
+        "workouts": [
+          {
+            "type": "calisthenics_morning",
+            "timeOfDay": "morning",
+            "durationMin": 20,
+            "fasted": true,
+            "notes": [
+              "Nüchtern, 20 Minuten."
+            ],
+            "startTime": "06:30"
+          }
+        ],
+        "meals": [
+          {
+            "slot": "first_meal",
+            "mealId": "first-r-eier-horta",
+            "targetTime": "13:00"
+          },
+          {
+            "slot": "dinner",
+            "mealId": "dinner-sat",
+            "targetTime": "18:45"
+          },
+          {
+            "slot": "optional_snack",
+            "mealId": "snack-evening-yogurt",
+            "targetTime": "20:45",
+            "optional": false
+          }
+        ],
+        "supplementSlots": [
+          {
+            "slot": "with_first_meal",
+            "protocolId": "protocol-midday",
+            "targetTime": "13:00"
+          },
+          {
+            "slot": "with_dinner",
+            "protocolId": "protocol-dinner",
+            "targetTime": "18:45"
+          },
+          {
+            "slot": "before_sleep",
+            "protocolId": "protocol-sleep",
+            "targetTime": "21:30"
+          }
+        ],
+        "dayTypeIsAssumption": true
+      },
+      {
+        "weekday": "sun",
+        "dayType": "rest_day",
+        "workouts": [
+          {
+            "type": "calisthenics_morning",
+            "timeOfDay": "morning",
+            "durationMin": 20,
+            "fasted": true,
+            "notes": [
+              "Nüchtern, 20 Minuten."
+            ],
+            "startTime": "06:30"
+          }
+        ],
+        "meals": [
+          {
+            "slot": "first_meal",
+            "mealId": "first-r-sun-brunch",
+            "targetTime": "12:30"
+          },
+          {
+            "slot": "dinner",
+            "mealId": "dinner-sun-light",
+            "targetTime": "18:45"
+          },
+          {
+            "slot": "optional_snack",
+            "mealId": "snack-evening-yogurt",
+            "targetTime": "20:45",
+            "optional": false
+          }
+        ],
+        "supplementSlots": [
+          {
+            "slot": "with_first_meal",
+            "protocolId": "protocol-midday",
+            "targetTime": "12:30"
+          },
+          {
+            "slot": "with_dinner",
+            "protocolId": "protocol-dinner",
+            "targetTime": "18:45"
+          },
+          {
+            "slot": "before_sleep",
+            "protocolId": "protocol-sleep",
+            "targetTime": "21:30"
+          }
+        ],
+        "dayTypeIsAssumption": true
+      }
+    ]
+  },
+  "safetyRules": [
+    {
+      "id": "kolokasi-cooked",
+      "severity": "critical",
+      "appliesToRoles": [
+        "father",
+        "mother",
+        "child"
+      ],
+      "text": "Kolokasi (Taro) nur vollständig durchgegart essen, nie roh: Kalziumoxalat-Kristalle verursachen Reizung von Mund und Rachen. Kochwasser verwerfen.",
+      "confidence": "sicher"
+    },
+    {
+      "id": "child-no-supplements",
+      "severity": "critical",
+      "appliesToRoles": [
+        "child"
+      ],
+      "text": "Keine der Supplemente (Kreatin, Zink, Magnesium, Glycin, CoQ10, D3/K2, Omega-3) für die 4-Jährige ohne kinderärztliche Anweisung. Supplemente außer Reichweite aufbewahren (Zink und Magnesium sind bei Kindern überdosierbar).",
+      "confidence": "sicher"
+    },
+    {
+      "id": "child-nuts-choking",
+      "severity": "caution",
+      "appliesToRoles": [
+        "child"
+      ],
+      "text": "Ganze Nüsse und harte Stücke sind unter 5 Jahren ein Erstickungsrisiko: nur gemahlen oder als Mus.",
+      "confidence": "sicher"
+    },
+    {
+      "id": "child-no-spice-salt",
+      "severity": "info",
+      "appliesToRoles": [
+        "child"
+      ],
+      "text": "Kinderportion vor Salz, Pfeffer und Schärfe abnehmen (Baukasten-Prinzip, seasoningAfterSplit).",
+      "confidence": "sicher"
+    },
+    {
+      "id": "raw-grain-soak",
+      "severity": "caution",
+      "appliesToRoles": [
+        "father",
+        "mother"
+      ],
+      "text": "Frischkorn: mind. 8 h im Kühlschrank quellen lassen und innerhalb von 24 h verzehren; rohes Getreide/Mehl kann Keime tragen. Für das Kind nicht vorgesehen.",
+      "confidence": "wahrscheinlich"
+    },
+    {
+      "id": "heat-fasted-training",
+      "severity": "caution",
+      "appliesToRoles": [
+        "father"
+      ],
+      "text": "Nüchternes 60-Minuten-Training um 12:30 in der zypriotischen Mittagshitze: Risiko für Hitzebelastung und Dehydrierung. Schatten oder Innenraum, Wasser mit Elektrolyten während/vor dem Training.",
+      "confidence": "sicher"
+    },
+    {
+      "id": "fish-sourcing",
+      "severity": "info",
+      "appliesToRoles": [
+        "father",
+        "mother",
+        "child"
+      ],
+      "text": "Lavraki/Tsipoura aus Zucht und kleine bis mittlere Fische haben niedrige bis moderate Quecksilberwerte; Raubfische (Schwertfisch, Hai) für das Kind meiden.",
+      "confidence": "wahrscheinlich"
+    },
+    {
+      "id": "supplement-upper-limits",
+      "severity": "caution",
+      "appliesToRoles": [
+        "father"
+      ],
+      "text": "Zink 15 mg (EFSA-UL 25 mg gesamt aus Nahrung + Supplement) ist gedrosselt, kann mit der fleisch- und fischreichen Kost aber knapp werden. Magnesium 2 x 150 mg elementar = 300 mg liegt über der EFSA-Orientierung von 250 mg aus Supplementen: 2 x 125 mg wäre konform. Labor nach 3 Monaten.",
+      "confidence": "sicher"
+    },
+    {
+      "id": "taverna-child",
+      "severity": "caution",
+      "appliesToRoles": [
+        "child"
+      ],
+      "text": "Taverne: Oktopus ist für die Tochter nicht geeignet (zäh, Erstickungsrisiko). Fisch ohne Gräten, Fleisch klein geschnitten, ohne Salz und Schärfe.",
+      "confidence": "sicher"
+    }
+  ],
+  "openDecisions": [
+    {
+      "id": "weekend-day-type",
+      "question": "Sind Samstag/Sonntag Ruhetage? Du hast nur Mo-Fr definiert.",
+      "status": "decided",
+      "seedDefault": "rest_day (Sa Taverne-Modus, So Familien-Brunch)"
+    },
+    {
+      "id": "calisthenics-start-time",
+      "question": "Wann genau startet das 20-Minuten-Calisthenics am Morgen?",
+      "status": "decided",
+      "seedDefault": "06:30"
+    },
+    {
+      "id": "body-weight",
+      "question": "Körpergewicht des Vaters (für g/kg-Ziele und kcal)?",
+      "status": "decided",
+      "seedDefault": "95 kg"
+    },
+    {
+      "id": "mother-goals",
+      "question": "Ziele und Portionsgrößen der Mutter?",
+      "status": "decided",
+      "seedDefault": "Standardfaktor 0,8"
+    },
+    {
+      "id": "ketosis-vs-low-carb",
+      "question": "Strikte Ketose oder Low-Carb an Ruhetagen? Mit Carb-Zyklus Mo/Mi/Fr ist echte Ketose unwahrscheinlich.",
+      "status": "open",
+      "seedDefault": "rest_day carbsGPerKg 0.5-1.0"
+    },
+    {
+      "id": "third-meal",
+      "question": "Optionaler Spätsnack, falls Kalorien/Protein in zwei Mahlzeiten nicht erreichbar?",
+      "status": "decided",
+      "seedDefault": "Spätsnack fest aktiv, 20:45"
+    },
+    {
+      "id": "sun-brunch-time",
+      "question": "Uhrzeit des Sonntags-Brunchs (Fastenbrechen) ist nicht vorgegeben.",
+      "status": "open",
+      "seedDefault": "12:30"
+    },
+    {
+      "id": "magnesium-efsa-total",
+      "question": "2 x 150 mg Magnesium elementar = 300 mg überschreitet die EFSA-Orientierung von 250 mg aus Supplementen.",
+      "status": "open",
+      "seedDefault": "2 x 150 mg wie vorgegeben, in der App auf 125 mg umschaltbar"
+    },
+    {
+      "id": "training-day-carb-gap",
+      "question": "Die Trainingstag-Mahlzeiten liefern deutlich weniger Kohlenhydrate (g/kg) als das Ziel 4-5 g/kg aus den dayTypes und mehr Fett als 0,8-1,2 g/kg.",
+      "status": "open",
+      "seedDefault": "Solver skaliert nur auf Protein; Abweichungen werden in der App markiert"
+    }
+  ]
+}

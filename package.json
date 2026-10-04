@@ -1,0 +1,25 @@
+{
+  "name": "familienplan",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "packageManager": "pnpm@10.28.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "typecheck": "pnpm -r --if-present typecheck",
+    "test": "pnpm -r --if-present test",
+    "validate-content": "tsx scripts/validate-content.ts",
+    "build": "pnpm --filter @familienplan/web build",
+    "ci": "pnpm validate-content && pnpm typecheck && pnpm test && pnpm build"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "vitest": "^3.0.0",
+    "@familienplan/schema": "workspace:*",
+    "@familienplan/engine": "workspace:*",
+    "@types/node": "^22.0.0"
+  }
+}
