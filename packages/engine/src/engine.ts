@@ -1,5 +1,5 @@
-import type { Component, Dose, Ingredient, Meal, SeedV2, Supplement, SupplementProtocol, WeekDay } from '@familienplan/schema';
-import { ROLE_IDS, type RoleId } from '@familienplan/schema';
+import type { Component, Dose, Ingredient, Meal, RoleId, SeedV2, Supplement, SupplementProtocol, WeekDay } from '@familienplan/schema';
+import { ROLE_IDS } from '@familienplan/schema/constants';
 import { DEFAULT_CONFIG } from './config';
 import { clamp, mean, nf0, nf1, nf2, rngTxt, shortName } from './format';
 import type {

@@ -1,0 +1,22 @@
+{
+  "name": "@familienplan/worker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev -c ../../wrangler.jsonc",
+    "typecheck": "tsc -p tsconfig.json && tsc -p tsconfig.node.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "hono": "^4.13.13",
+    "jose": "^6.2.12",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.22.0",
+    "@cloudflare/workers-types": "^5.20261004.1",
+    "vitest": "^4.1.11",
+    "wrangler": "^4.147.0"
+  }
+}

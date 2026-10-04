@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { ROLE_IDS, WEEKDAYS } from './constants';
 
 /**
  * Zod-Schema für Seed v2 (Inhalte aus Phase 1, Struktur unverändert gegenüber der Single-File-App).
@@ -6,11 +7,10 @@ import { z } from 'zod';
  * Das v3-Inhaltsschema (Quellen, Konfidenz, Status, Dial-Zutaten) folgt in Phase 2.
  */
 
-export const ROLE_IDS = ['father', 'mother', 'child'] as const;
+export { ROLE_IDS, WEEKDAYS };
 export const RoleId = z.enum(ROLE_IDS);
 export type RoleId = z.infer<typeof RoleId>;
 
-export const WEEKDAYS = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'] as const;
 export const Weekday = z.enum(WEEKDAYS);
 export type Weekday = z.infer<typeof Weekday>;
 

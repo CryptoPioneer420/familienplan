@@ -12,7 +12,8 @@
     "test": "pnpm -r --if-present test",
     "validate-content": "tsx scripts/validate-content.ts",
     "build": "pnpm --filter @familienplan/web build",
-    "ci": "pnpm validate-content && pnpm typecheck && pnpm test && pnpm build"
+    "verify": "pnpm validate-content && pnpm typecheck && pnpm test && pnpm build",
+    "e2e": "pnpm --filter @familienplan/web e2e"
   },
   "devDependencies": {
     "tsx": "^4.19.0",
