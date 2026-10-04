@@ -18,7 +18,7 @@ describe('Routenschutz (Regressionswächter für künftige Routen, z. B. /api/sy
 
   it('kennt die erwarteten Routen (Wächter ist nicht leer)', () => {
     const keys = new Set(routesOf().map((r) => r.key));
-    for (const expected of ['GET /api/health', 'GET /api/me', 'GET /api/members', 'POST /api/members']) {
+    for (const expected of ['GET /api/health', 'GET /api/me', 'GET /api/members', 'POST /api/members', 'GET /api/shopping-lists/current', 'PUT /api/shopping-lists/:listId']) {
       expect(keys.has(expected), expected).toBe(true);
     }
   });

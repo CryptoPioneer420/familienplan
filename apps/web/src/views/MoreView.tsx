@@ -4,8 +4,11 @@ import { Chip, Masthead, Segmented, Switch } from '../components/ui';
 import { fetchMe, type MeResult } from '../lib/api';
 import { engine, seed } from '../lib/engine';
 import { SEVERITY_LABEL } from '../lib/labels';
-import { isStandalone } from '../lib/platform';
+import { useMe } from '../lib/me';
+import { isAndroid } from '../lib/install';
+import { isIos, isStandalone } from '../lib/platform';
 import { store, useAppState } from '../lib/useApp';
+import { FamilySection } from './FamilySection';
 
 interface Props {
   offlineReady: boolean;
@@ -44,6 +47,7 @@ const CONNECTION_TEXT: Record<Exclude<MeResult['kind'], 'ok'>, { tone: 'warn' | 
 
 export function MoreView({ offlineReady, onCheckUpdate }: Props) {
   const app = useAppState();
+  const { known, refresh: refreshMe } = useMe();
   const p = app.plan;
   const cfg = engine.config;
   const [conn, setConn] = useState<MeResult | 'checking' | null>(null);
@@ -55,6 +59,7 @@ export function MoreView({ offlineReady, onCheckUpdate }: Props) {
   async function check() {
     setConn('checking');
     setConn(await fetchMe());
+    void refreshMe();
   }
   async function checkUpdate() {
     setUpdateMsg('Suche läuft. Gibt es eine neue Version, erscheint unten ein Hinweis.');
@@ -87,6 +92,12 @@ export function MoreView({ offlineReady, onCheckUpdate }: Props) {
             ) : null}
           </div>
         </Section>
+
+        {known?.role === 'owner' ? (
+          <Section title="Familie" hint="Wer die geteilte Einkaufsliste sehen darf.">
+            <FamilySection />
+          </Section>
+        ) : null}
 
         <Section title="Meine Werte" hint="Bleiben auf diesem Gerät und werden nie an den Server gesendet.">
           <div className="hairline py-3">
@@ -219,7 +230,7 @@ export function MoreView({ offlineReady, onCheckUpdate }: Props) {
           <Row label="Version" sub={`Inhalte: Schema ${seed.schemaVersion}`}>
             <span className="tnum font-semibold">{__APP_VERSION__}</span>
           </Row>
-          <Row label="Als App installiert" sub={isStandalone() ? undefined : 'Safari: Teilen-Symbol, „Zum Home-Bildschirm“'}>
+          <Row label="Als App installiert" sub={isStandalone() ? undefined : isAndroid() ? 'Chrome: Menü, „App installieren“' : isIos() ? 'Safari: Teilen-Symbol, „Zum Home-Bildschirm“' : 'Browser-Menü: „Installieren“ bzw. „Zum Home-Bildschirm“'}>
             <Chip tone={isStandalone() ? 'ok' : 'warn'}>{isStandalone() ? 'ja' : 'nein'}</Chip>
           </Row>
           <Row label="Offline verfügbar" sub={offlineReady ? undefined : 'Wird beim ersten Start mit Verbindung vorbereitet'}>

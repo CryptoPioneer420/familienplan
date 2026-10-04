@@ -29,10 +29,13 @@ export default defineConfig({
   },
   webServer: external
     ? undefined
-    : {
-        command: 'pnpm exec vite preview --port 4173 --strictPort --host 127.0.0.1',
-        url: 'http://127.0.0.1:4173',
-        reuseExistingServer: !process.env['CI'],
-        timeout: 30_000,
-      },
+    : [
+        {
+          command: 'pnpm exec vite preview --port 4173 --strictPort --host 127.0.0.1',
+          url: 'http://127.0.0.1:4173',
+          reuseExistingServer: !process.env['CI'],
+          timeout: 30_000,
+        },
+        { command: 'node e2e/stub-api.mjs', port: 8787, reuseExistingServer: !process.env['CI'], timeout: 10_000 },
+      ],
 });

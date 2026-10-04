@@ -1,6 +1,6 @@
 import { defaultPlanState } from '@familienplan/engine';
 import { describe, expect, it } from 'vitest';
-import { dateOfWeekday, dayEvents, doseText, isoDate, mealBlocks, railPos, shoppingText, speedText, stackItems, varomaCombo, weekdayOfDate } from './domain';
+import { AISLE_ORDER, dateOfWeekday, dayEvents, doseText, isoDate, mealBlocks, railPos, shoppingText, speedText, stackItems, toPublishItems, weekListId, qtyText, varomaCombo, weekdayOfDate } from './domain';
 import { engine } from './engine';
 
 const state = defaultPlanState();
@@ -125,5 +125,38 @@ describe('Einkaufstext', () => {
   it('leere Liste liefert „Nichts zu kaufen“', () => {
     const none = engine.computeShopping(plan, { ...state, activeDays: { mon: false, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false } });
     expect(shoppingText(engine, none, {}, false)).toContain('Nichts zu kaufen');
+  });
+});
+
+describe('Geteilte Liste', () => {
+  const items = toPublishItems(engine, shop);
+  it('Standardplan ergibt Artikel, höchstens 150, mit eindeutigen IDs', () => {
+    expect(items.length).toBeGreaterThan(5);
+    expect(items.length).toBeLessThanOrEqual(150);
+    expect(new Set(items.map((i) => i.id)).size).toBe(items.length);
+  });
+  it('alle Zutaten-IDs des Seeds erfüllen das ID-Muster des Servers', () => {
+    for (const ing of engine.seed.ingredients) expect(ing.id, ing.id).toMatch(/^[A-Za-z0-9_.-]{1,80}$/);
+  });
+  it('Menge ist positiv, Einheit g, Bereich bekannt, Label nicht leer', () => {
+    for (const it of items) {
+      expect(it.qty, it.id).toBeGreaterThan(0);
+      expect(it.unit).toBe('g');
+      expect(AISLE_ORDER).toContain(it.aisle);
+      expect(it.label.length).toBeGreaterThan(0);
+      expect(it.label.length).toBeLessThanOrEqual(120);
+    }
+  });
+  it('Körperdaten stecken nicht im Payload (nur Artikel, Mengen, Hinweise)', () => {
+    expect(Object.keys(items[0] ?? {}).sort()).toEqual(['aisle', 'id', 'ingredientId', 'label', 'note', 'qty', 'unit']);
+  });
+  it('Listen-ID ist der Montag der Woche', () => {
+    expect(weekListId(new Date(2026, 9, 4))).toBe('week-2026-09-28');
+    expect(weekListId(new Date(2026, 9, 5))).toBe('week-2026-10-05');
+  });
+  it('Mengenanzeige: ab 1000 g in kg, deutsches Format', () => {
+    expect(qtyText(500, 'g')).toBe('500 g');
+    expect(qtyText(1500, 'g')).toBe('1,50 kg');
+    expect(qtyText(null, null)).toBe('');
   });
 });

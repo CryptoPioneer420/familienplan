@@ -271,3 +271,37 @@ export function speedText(speed: string | null): string | null {
   if (!speed) return null;
   return /^\d+$/.test(speed) ? `Stufe ${speed}` : speed;
 }
+
+/* ---------- Geteilte Liste: Abbildung der Engine-Einkaufsliste ---------- */
+
+import type { PublishItem } from './shared';
+
+export const AISLE_LABEL: Record<PublishItem['aisle'], string> = {
+  meat_fish: 'Fisch & Fleisch',
+  dairy_eggs: 'Frischetheke, Anari & Bäckerei',
+  produce: 'Markt-Gemüse & Frisches',
+  dry: 'Vorrat',
+  frozen: 'Tiefkühl',
+  other: 'Sonstiges',
+};
+export const AISLE_ORDER: ReadonlyArray<PublishItem['aisle']> = ['meat_fish', 'dairy_eggs', 'produce', 'dry', 'frozen', 'other'];
+const CAT_TO_AISLE: Record<string, PublishItem['aisle']> = { meat: 'meat_fish', fresh: 'dairy_eggs', veg: 'produce', pantry: 'dry' };
+
+/** Einkaufsliste der Engine als Veröffentlichungs-Payload (eine Zeile je Zutat, aufgerundete Gramm). */
+export function toPublishItems(engine: Engine, shop: Shopping): PublishItem[] {
+  return shop.items.map((i) => ({
+    id: i.id,
+    ingredientId: i.id,
+    label: shortName(engine.ingredient(i.id).nameDe),
+    qty: i.buy,
+    unit: 'g',
+    aisle: CAT_TO_AISLE[i.cat] ?? 'other',
+    note: buyHint(i) || null,
+  }));
+}
+
+export const qtyText = (qty: number | null, unit: string | null): string =>
+  qty == null ? '' : unit === 'g' && qty >= 1000 ? `${nf2.format(qty / 1000)} kg` : `${nf0.format(qty)}${unit ? ` ${unit}` : ''}`;
+
+/** Kalenderwoche (Mo) als stabile Listen-ID, z. B. week-2026-09-28. */
+export const weekListId = (ref: Date): string => `week-${isoDate(dateOfWeekday(ref, 'mon'))}`;

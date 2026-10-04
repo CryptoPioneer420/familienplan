@@ -4,6 +4,7 @@ import { ErrorBoundary } from './components/ErrorBoundary';
 import { TabBar, TABS, type TabId } from './components/TabBar';
 import { UpdateBanner, useServiceWorker } from './components/UpdateBanner';
 import { weekdayOfDate } from './lib/domain';
+import { MeProvider } from './lib/me';
 import { store } from './lib/useApp';
 import { MoreView } from './views/MoreView';
 import { ShopView } from './views/ShopView';
@@ -35,6 +36,7 @@ export function App() {
 
   return (
     <ErrorBoundary onReset={() => store.resetAll()}>
+      <MeProvider>
       <div className="scrim" aria-hidden="true" />
       <main className="page" id="main">
         {tab === 'woche' ? (
@@ -51,6 +53,7 @@ export function App() {
       </main>
       <UpdateBanner visible={sw.needRefresh} onUpdate={sw.update} onDismiss={sw.dismiss} />
       <TabBar active={tab} onSelect={go} />
+      </MeProvider>
     </ErrorBoundary>
   );
 }

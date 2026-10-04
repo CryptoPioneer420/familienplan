@@ -6,6 +6,7 @@ import { errorResponse, notFound, onError } from './middleware/errors';
 import { healthRoutes } from './routes/health';
 import { memberRoutes } from './routes/members';
 import { meRoutes } from './routes/me';
+import { shoppingRoutes } from './routes/shopping';
 import type { AppDeps, AppEnv, Runtime } from './types';
 
 const MAX_BODY_BYTES = 16 * 1024;
@@ -38,6 +39,7 @@ export function createApp(deps: AppDeps = {}) {
   app.route('/api', healthRoutes);
   app.route('/api', meRoutes(rt));
   app.route('/api', memberRoutes(rt));
+  app.route('/api', shoppingRoutes(rt));
 
   // Unbekannte /api-Pfade (und Methoden): JSON-404, nie die SPA.
   app.all('/api/*', notFound);

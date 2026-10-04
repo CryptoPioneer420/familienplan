@@ -3,6 +3,7 @@ import type { Weekday } from '@familienplan/schema';
 import { Chip, Masthead } from '../components/ui';
 import { dayEvents, RAIL_TICKS, railPos, weekdayOfDate } from '../lib/domain';
 import { engine } from '../lib/engine';
+import { isAndroid, useInstallPrompt } from '../lib/install';
 import { isIos, isStandalone } from '../lib/platform';
 import { store, useAppState, useComputed } from '../lib/useApp';
 
@@ -15,7 +16,8 @@ export function WeekView({ onOpenDay }: { onOpenDay: (day: Weekday) => void }) {
   const today = weekdayOfDate(new Date());
   const cfg = engine.config;
   const issues = findings.filter((f) => f.k === 'warn' || f.k === 'bad').length;
-  const showInstallHint = !installHintDismissed && isIos() && !isStandalone();
+  const installPrompt = useInstallPrompt();
+  const showInstallHint = !installHintDismissed && !isStandalone() && (isIos() || isAndroid());
 
   return (
     <>
@@ -24,7 +26,14 @@ export function WeekView({ onOpenDay }: { onOpenDay: (day: Weekday) => void }) {
       <div className="px-4 pt-4">
         {showInstallHint ? (
           <div className="note mb-4 flex items-start gap-3" role="note">
-            <p className="m-0 flex-1">Als App nutzen: Teilen-Symbol in Safari, dann „Zum Home-Bildschirm“.</p>
+            <p className="m-0 flex-1">
+              {isIos() ? 'Als App nutzen: Teilen-Symbol in Safari, dann „Zum Home-Bildschirm“.' : installPrompt ? 'Als App auf dem Startbildschirm nutzen.' : 'Als App nutzen: Chrome-Menü (drei Punkte), dann „App installieren“.'}
+            </p>
+            {installPrompt ? (
+              <button type="button" className="min-h-[44px] px-2 font-semibold text-brand" onClick={() => void installPrompt()}>
+                Installieren
+              </button>
+            ) : null}
             <button type="button" className="min-h-[44px] px-2 font-semibold text-brand" onClick={() => store.dismissInstallHint()}>
               Verstanden
             </button>

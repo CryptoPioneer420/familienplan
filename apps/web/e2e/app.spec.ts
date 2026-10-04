@@ -12,6 +12,8 @@ test.beforeEach(async ({ page }) => {
   page.on('console', (m) => {
     if (m.type() === 'error' && !/Failed to load resource.*(401|403|503|404)/.test(m.text())) errors.push(m.text());
   });
+  // Die App fragt beim Start /api/me ab. Standard in dieser Suite: Server nicht eingerichtet (503). Einzelne Tests überschreiben das.
+  await page.route('**/api/**', (route) => route.fulfill({ status: 503, contentType: 'application/json', body: '{"error":{"code":"auth_not_configured","message":"x"}}' }));
   await page.goto('/');
   await expect(page.getByRole('heading', { name: 'Woche', level: 1 })).toBeVisible();
 });
