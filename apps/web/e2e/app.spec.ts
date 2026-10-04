@@ -10,7 +10,7 @@ test.beforeEach(async ({ page }) => {
   page.on('pageerror', (e) => errors.push(`pageerror: ${e.message}`));
   // CSP-Verstöße (z. B. blockierte Skripte/Schriften) erscheinen als Konsolenfehler.
   page.on('console', (m) => {
-    if (m.type() === 'error' && !/Failed to load resource.*(401|403|503|404)/.test(m.text())) errors.push(m.text());
+    if (m.type() === 'error' && !/Failed to load resource.*(401|403|503|404|net::ERR_(FAILED|INTERNET_DISCONNECTED))/.test(m.text())) errors.push(m.text());
   });
   // Die App fragt beim Start /api/me ab. Standard in dieser Suite: Server nicht eingerichtet (503). Einzelne Tests überschreiben das.
   await page.route('**/api/**', (route) => route.fulfill({ status: 503, contentType: 'application/json', body: '{"error":{"code":"auth_not_configured","message":"x"}}' }));
