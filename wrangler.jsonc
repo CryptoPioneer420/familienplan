@@ -14,8 +14,7 @@
     {
       "binding": "DB",
       "database_name": "familienplan",
-      // Platzhalter für lokale Entwicklung. Echte ID nach `wrangler d1 create familienplan` bzw. über den Cloudflare-Connector eintragen.
-      "database_id": "00000000-0000-0000-0000-000000000000",
+      "database_id": "5828fddc-8388-4cd9-99f0-9db2464e983e",
       "migrations_dir": "migrations"
     }
   ],
